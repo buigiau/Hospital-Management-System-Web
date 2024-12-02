@@ -1,0 +1,2 @@
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\wwwroot\favicon.ico
+wwwroot\favicon.ico
