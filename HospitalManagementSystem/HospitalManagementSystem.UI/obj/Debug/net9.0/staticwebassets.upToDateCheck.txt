@@ -1,9 +1,0 @@
-C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\wwwroot\js\jquery.js
-C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\wwwroot\favicon.ico
-C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\wwwroot\js\authentication.js
-C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\wwwroot\css\authentication.css
-wwwroot\css\authentication.css
-wwwroot\favicon.ico
-wwwroot\img\Logo.jpg
-wwwroot\js\authentication.js
-wwwroot\js\jquery.js
