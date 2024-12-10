@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\wwwroot\\css\\authentication.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\wwwroot\\css\\authentication.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.ui\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{73376BF0-9DCB-45ED-850C-6A76E9A50133}|HospitalManagementSystem.UI\\HospitalManagementSystem.UI.csproj|solutionrelative:hospitalmanagementsystem.ui\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC063FA-F2E4-41C5-B3B5-05E3C434881D}|HospitalManagementSystem.Core\\HospitalManagementSystem.Core.csproj|c:\\users\\sacsi\\hospital management system\\hospitalmanagementsystem\\hospitalmanagementsystem.core\\dto\\resgiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC063FA-F2E4-41C5-B3B5-05E3C434881D}|HospitalManagementSystem.Core\\HospitalManagementSystem.Core.csproj|solutionrelative:hospitalmanagementsystem.core\\dto\\resgiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\appsettings.json",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\appsettings.json",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\appsettings.json",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-10T08:21:45.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-10T07:34:36.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "authentication.css",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-10T07:19:11.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T08:17:31.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\Views\\User\\Login.cshtml",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\Views\\User\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T07:53:23.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ResgiterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.Core\\DTO\\ResgiterDTO.cs",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.Core\\DTO\\ResgiterDTO.cs",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.Core\\DTO\\ResgiterDTO.cs",
+              "RelativeToolTip": "HospitalManagementSystem.Core\\DTO\\ResgiterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:22:06.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:06:38.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Program.cs",
               "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\Program.cs",
               "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Program.cs",
               "RelativeToolTip": "HospitalManagementSystem.UI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-02T08:14:39.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "HospitalManagementSystem.UI\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "HospitalManagementSystem.UI\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-10T07:27:03.717Z",
               "EditorCaption": ""
             }
           ]
