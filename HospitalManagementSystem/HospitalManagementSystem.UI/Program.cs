@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
@@ -10,13 +10,20 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+app.MapControllers();
 
 app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+
+app.UseEndpoints(endpoints =>
+{
+	endpoints.MapControllerRoute(
+		name: "default",
+		pattern: "{controller=User}/{action=Login}/{id?}");
+});
 
 app.Run();

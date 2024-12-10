@@ -10,3 +10,4 @@ C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManag
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Core\obj\Debug\net9.0\refint\HospitalManagementSystem.Core.dll
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Core\obj\Debug\net9.0\HospitalManagementSystem.Core.pdb
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Core\obj\Debug\net9.0\ref\HospitalManagementSystem.Core.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Core\obj\Debug\net9.0\HospitalManagementSystem.Core.sourcelink.json

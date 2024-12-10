@@ -171,3 +171,17 @@ C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManag
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\HospitalManagementSystem.UI.pdb
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\HospitalManagementSystem.UI.genruntimeconfig.cache
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\ref\HospitalManagementSystem.UI.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\HospitalManagementSystem.UI.RazorAssemblyInfo.cache
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\HospitalManagementSystem.UI.RazorAssemblyInfo.cs
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\HospitalManagementSystem.UI.sourcelink.json
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\CsvHelper.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\EPPlus.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\EPPlus.Interfaces.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\EPPlus.System.Drawing.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\bin\Debug\net9.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\compressed\ggsa3z8yar-033o6q1llh.gz
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\compressed\u5q6a8e5r1-8iqrsfqg07.gz
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.UI\obj\Debug\net9.0\compressed\w3m3urpp8g-9gybq9ga3v.gz

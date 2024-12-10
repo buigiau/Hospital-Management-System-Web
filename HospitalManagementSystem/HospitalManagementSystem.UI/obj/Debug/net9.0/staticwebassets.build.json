@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "20saor/X0TBeJhhKuTSqwWg4x1mdbVJLbWuwBEetAbc=",
+  "Hash": "gWgtsWLSCxGE3XXN0ZO4YjdTtQBvPRbqy7/wOuXKXNs=",
   "Source": "HospitalManagementSystem.UI",
   "BasePath": "_content/HospitalManagementSystem.UI",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\ggsa3z8yar-033o6q1llh.gz",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "js/jquery#[.{fingerprint=033o6q1llh}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\jquery.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "7l5yoew0h8",
+      "Integrity": "y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\jquery.js"
+    },
     {
       "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\iq0ifsjbw1-61n19gt1b8.gz",
       "SourceId": "HospitalManagementSystem.UI",
@@ -38,6 +59,69 @@
       "OriginalItemSpec": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\u5q6a8e5r1-8iqrsfqg07.gz",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "js/authentication#[.{fingerprint=8iqrsfqg07}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\authentication.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "u82yal7ytn",
+      "Integrity": "IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\authentication.js"
+    },
+    {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\w3m3urpp8g-9gybq9ga3v.gz",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "css/authentication#[.{fingerprint=9gybq9ga3v}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "t8uwld0vou",
+      "Integrity": "HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css"
+    },
+    {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "css/authentication#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9gybq9ga3v",
+      "Integrity": "197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\authentication.css"
+    },
+    {
       "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\favicon.ico",
       "SourceId": "HospitalManagementSystem.UI",
       "SourceType": "Discovered",
@@ -57,9 +141,370 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\img\\Logo.jpg",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "img/Logo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p70qic4tz4",
+      "Integrity": "a/oDkDtf1QKKH6i9BjEnHp7IOdSrumZasKGlnRVllks=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Logo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\authentication.js",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "js/authentication#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8iqrsfqg07",
+      "Integrity": "EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\authentication.js"
+    },
+    {
+      "Identity": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\jquery.js",
+      "SourceId": "HospitalManagementSystem.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\",
+      "BasePath": "_content/HospitalManagementSystem.UI",
+      "RelativePath": "js/jquery#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "033o6q1llh",
+      "Integrity": "ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.js"
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/authentication.9gybq9ga3v.css",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\w3m3urpp8g-9gybq9ga3v.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000957854406"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1043"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9gybq9ga3v"
+        },
+        {
+          "Name": "label",
+          "Value": "css/authentication.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg="
+        }
+      ]
+    },
+    {
+      "Route": "css/authentication.9gybq9ga3v.css",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2899"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9gybq9ga3v"
+        },
+        {
+          "Name": "label",
+          "Value": "css/authentication.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg="
+        }
+      ]
+    },
+    {
+      "Route": "css/authentication.9gybq9ga3v.css.gz",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\w3m3urpp8g-9gybq9ga3v.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1043"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9gybq9ga3v"
+        },
+        {
+          "Name": "label",
+          "Value": "css/authentication.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI="
+        }
+      ]
+    },
+    {
+      "Route": "css/authentication.css",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\w3m3urpp8g-9gybq9ga3v.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000957854406"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1043"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg="
+        }
+      ]
+    },
+    {
+      "Route": "css/authentication.css",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2899"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-197eoYoOuHGCvrCa/QRw8/5mqdIaupRPyTGRluR7SWg="
+        }
+      ]
+    },
+    {
+      "Route": "css/authentication.css.gz",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\w3m3urpp8g-9gybq9ga3v.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1043"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HaoFVwk036NQRmAkDRUd7oL44GBY33ygyPwRdp94yCI="
+        }
+      ]
+    },
     {
       "Route": "favicon.61n19gt1b8.ico",
       "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\iq0ifsjbw1-61n19gt1b8.gz",
@@ -355,6 +800,684 @@
         {
           "Name": "integrity",
           "Value": "sha256-jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8="
+        }
+      ]
+    },
+    {
+      "Route": "img/Logo.jpg",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\img\\Logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6412"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a/oDkDtf1QKKH6i9BjEnHp7IOdSrumZasKGlnRVllks=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-a/oDkDtf1QKKH6i9BjEnHp7IOdSrumZasKGlnRVllks="
+        }
+      ]
+    },
+    {
+      "Route": "img/Logo.p70qic4tz4.jpg",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\img\\Logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6412"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a/oDkDtf1QKKH6i9BjEnHp7IOdSrumZasKGlnRVllks=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p70qic4tz4"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Logo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-a/oDkDtf1QKKH6i9BjEnHp7IOdSrumZasKGlnRVllks="
+        }
+      ]
+    },
+    {
+      "Route": "js/authentication.8iqrsfqg07.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\u5q6a8e5r1-8iqrsfqg07.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001988071571"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "502"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8iqrsfqg07"
+        },
+        {
+          "Name": "label",
+          "Value": "js/authentication.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg="
+        }
+      ]
+    },
+    {
+      "Route": "js/authentication.8iqrsfqg07.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\authentication.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8iqrsfqg07"
+        },
+        {
+          "Name": "label",
+          "Value": "js/authentication.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg="
+        }
+      ]
+    },
+    {
+      "Route": "js/authentication.8iqrsfqg07.js.gz",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\u5q6a8e5r1-8iqrsfqg07.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "502"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8iqrsfqg07"
+        },
+        {
+          "Name": "label",
+          "Value": "js/authentication.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA="
+        }
+      ]
+    },
+    {
+      "Route": "js/authentication.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\u5q6a8e5r1-8iqrsfqg07.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001988071571"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "502"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg="
+        }
+      ]
+    },
+    {
+      "Route": "js/authentication.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\authentication.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EGmH0l4vsdeweXlua2zPpjy+nFMrh+84rMwZTcOvFcg="
+        }
+      ]
+    },
+    {
+      "Route": "js/authentication.js.gz",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\u5q6a8e5r1-8iqrsfqg07.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "502"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IhJB6pfK5neaYqcLAUM5JXyzQfG0LfEbGBu7FmInLfA="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.033o6q1llh.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\ggsa3z8yar-033o6q1llh.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000032870949"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30421"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "033o6q1llh"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jquery.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.033o6q1llh.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\jquery.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87536"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "033o6q1llh"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jquery.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.033o6q1llh.js.gz",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\ggsa3z8yar-033o6q1llh.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30421"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "033o6q1llh"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jquery.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\ggsa3z8yar-033o6q1llh.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000032870949"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30421"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.js",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\jquery.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87536"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZBzNnU5YSfH2DEYqzByOoBssPcyGyF/5msm15eFQeb0="
+        }
+      ]
+    },
+    {
+      "Route": "js/jquery.js.gz",
+      "AssetFile": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\obj\\Debug\\net9.0\\compressed\\ggsa3z8yar-033o6q1llh.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30421"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 10:51:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-y2AXdh78eHIsVBHDOPoi2MqDccFx+MIyxC4auUWHr/8="
         }
       ]
     }

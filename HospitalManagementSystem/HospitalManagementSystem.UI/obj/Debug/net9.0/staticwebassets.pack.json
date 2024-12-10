@@ -1,8 +1,24 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\css\\authentication.css",
+      "PackagePath": "staticwebassets\\css\\authentication.css"
+    },
+    {
       "Id": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\img\\Logo.jpg",
+      "PackagePath": "staticwebassets\\img\\Logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\authentication.js",
+      "PackagePath": "staticwebassets\\js\\authentication.js"
+    },
+    {
+      "Id": "C:\\Users\\sacsi\\Hospital Management System\\HospitalManagementSystem\\HospitalManagementSystem.UI\\wwwroot\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\js\\jquery.js"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HospitalManagementSystem.UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

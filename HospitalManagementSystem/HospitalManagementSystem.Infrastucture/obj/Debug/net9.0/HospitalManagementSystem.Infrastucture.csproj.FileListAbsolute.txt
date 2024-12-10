@@ -13,3 +13,4 @@ C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManag
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Infrastucture\obj\Debug\net9.0\refint\HospitalManagementSystem.Infrastucture.dll
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Infrastucture\obj\Debug\net9.0\HospitalManagementSystem.Infrastucture.pdb
 C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Infrastucture\obj\Debug\net9.0\ref\HospitalManagementSystem.Infrastucture.dll
+C:\Users\sacsi\Hospital Management System\HospitalManagementSystem\HospitalManagementSystem.Infrastucture\obj\Debug\net9.0\HospitalManagementSystem.Infrastucture.sourcelink.json
