@@ -1,0 +1,7 @@
+.vs/
+obj/
+*.suo
+*.cache
+*.dtbcache.v2
+*.bin
+*.nuget.cache
