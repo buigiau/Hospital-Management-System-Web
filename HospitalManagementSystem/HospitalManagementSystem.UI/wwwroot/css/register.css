@@ -1,0 +1,119 @@
+﻿body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ecf0f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 90%; /* Đảm bảo form chiếm 90% màn hình nhỏ */
+    max-width: 500px; /* Giới hạn chiều rộng tối đa */
+    height: auto; /* Cho phép form tự giãn theo nội dung */
+    padding: 20px; /* Giảm padding cho màn hình nhỏ */
+    border-radius: 20px;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    box-sizing: border-box;
+}
+
+.brand-logo {
+    height: 80px; /* Giảm kích thước logo */
+    width: 80px;
+    margin: 0 auto 20px; /* Thêm khoảng cách bên dưới */
+    background: url('/img/Logo.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+
+.brand-title {
+    font-size: 1.5rem; /* Giảm kích thước chữ */
+    color: #1DA1F2;
+    text-align: center;
+}
+
+.inputs {
+    text-align: left;
+    margin-top: 20px;
+}
+
+input, button {
+    display: block;
+    width: 100%; /* Đảm bảo chiếm 100% chiều rộng */
+    margin-bottom: 15px; /* Thêm khoảng cách giữa các phần tử */
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background: #ecf0f3;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+button {
+    color: white;
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    font-size: 14px; /* Kích thước chữ phù hợp */
+}
+
+    button:hover {
+        box-shadow: none;
+    }
+
+.password-container {
+    position: relative;
+}
+
+    .password-container i {
+        position: absolute;
+        right: 10px;
+        top: 50%; /* Canh giữa theo chiều dọc */
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #888;
+        cursor: pointer;
+    }
+
+a {
+    position: absolute;
+    font-size: 15px;
+    bottom: 4px;
+    right: 4px;
+    text-decoration: none;
+    color: black;
+    background: yellow;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .brand-logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    .brand-title {
+        font-size: 1.2rem;
+    }
+
+    button {
+        height: 40px;
+    }
+}

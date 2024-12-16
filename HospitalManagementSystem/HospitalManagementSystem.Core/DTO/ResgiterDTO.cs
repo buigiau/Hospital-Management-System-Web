@@ -1,4 +1,4 @@
-﻿/*using HospitalManagementSystem.Core.Enums;
+﻿using HospitalManagementSystem.Core.Enums;
 using Microsoft.AspNetCore.Mvc;
 using ServiceContracts.Enums;
 using System;
@@ -14,13 +14,13 @@ namespace HospitalManagementSystem.Core.DTO
 
 
 		[Required(ErrorMessage = "Email cannot be blank!")]
-		[EmailAddress(ErrorMessage = "Email is not in correct format!")]
-		[Remote(action: "IsEmailAlreadyRegistered", controller: "User", ErrorMessage = "Email already in use!")]
+		[EmailAddress(ErrorMessage = "Email should be in a proper email address format!")]
+		/*[Remote(action: "IsEmailAlreadyRegistered", controller: "User", ErrorMessage = "Email already in use!")]*/
 		public string Email { get; set; }
 
 
 		[Required(ErrorMessage = "Phone cannot be blank!")]
-		[RegularExpression("^[0-9]*$", ErrorMessage = "Phone numbers must contain only numbers!")]
+		[RegularExpression("^[0-9]*$", ErrorMessage = "Phone numbers should contain only numbers!")]
 		[DataType(DataType.PhoneNumber)]
 		public string Phone { get; set; }
 
@@ -40,4 +40,3 @@ namespace HospitalManagementSystem.Core.DTO
 		public UserTypeOptions UserType { get; set; } = UserTypeOptions.Admin;
 	}
 }
-*/
