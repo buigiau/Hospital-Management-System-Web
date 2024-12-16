@@ -1,0 +1,60 @@
+﻿@using HospitalManagementSystem.Core.DTO
+@model RegisterDTO
+@{
+    // ViewBag.Title = "Login";
+    // ViewBag.CurrentUrl = "~/User/Login";
+    Layout = "";
+
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
+<div class="container">
+    <div class="brand-logo"></div>
+    <div class="brand-title">REGISTER</div>
+    <div class="inputs">
+        <label>PERSON NAME</label>
+        <input type="text" placeholder="John" />
+        <label>EMAIL</label>
+        <input type="email" placeholder="example@test.com" />
+        <label>PHONE</label>
+        <input type="text" placeholder="0123456789" />
+        <label>PASSWORD</label>
+        <div class="password-container">
+            <input id="password" type="password" placeholder="Min 6 characters long" />
+            <i id="togglePassword" class="fas fa-eye"></i>
+        </div>
+        <label>CONFIRM PASSWORD</label>
+        <div class="password-container">
+            <input id="confirm-password" type="password" placeholder="Min 6 characters long" />
+            <i id="toggleConfirmPassword" class="fas fa-eye"></i>
+        </div>
+        <button type="submit">REGISTER</button>
+        <a href="#">Have an account?</a>
+    </div>
+</div>
+<script>
+    document.getElementById("togglePassword").addEventListener("click", function () {
+        const passwordField = document.getElementById("password");
+        const isPassword = passwordField.type === "password";
+
+        // Đổi type của input
+        passwordField.type = isPassword ? "text" : "password";
+
+        // Đổi biểu tượng con mắt
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+
+     // Toggle password visibility for "confirm-password" field
+    document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
+        const confirmPasswordField = document.getElementById("confirm-password");
+        const isPassword = confirmPasswordField.type === "password";
+
+        // Toggle the input type
+        confirmPasswordField.type = isPassword ? "text" : "password";
+
+        // Toggle the eye icon
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+</script>

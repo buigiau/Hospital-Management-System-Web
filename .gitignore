@@ -5,6 +5,7 @@
 *.sln.docstates
 bin/
 obj/
+logs/
 *.log
 # Bỏ qua các file tạm thời khác của .NET
 *.pdb

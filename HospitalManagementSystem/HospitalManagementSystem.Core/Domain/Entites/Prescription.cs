@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystem.Core.Domain.Entites
 {
-	public class Invoice
+	public class Prescription
 	{
-		public Guid InvoiceID { get; set; }
+		[Key]
+		public Guid PresciptionID { get; set; }
 
 		public Guid TreatmentID { get; set; }
 
-		public double Amount { get; set; }
+		[StringLength (100)]
+		public string? MedicationName { get; set; }
 
-		[StringLength(20)]
-		public string? PaymentStatus { get; set; }
+		public int Dosage { get; set; }
 
-		public DateTime? InvoiceDate { get; set; }
+		[StringLength (200)]
+		public string? Instruction { get; set; }
 
 		[ForeignKey("TreatmentID")]
 		public virtual Treatment? Treatment { get; set; }
