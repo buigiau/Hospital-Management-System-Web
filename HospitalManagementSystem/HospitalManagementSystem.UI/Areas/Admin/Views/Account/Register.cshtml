@@ -1,60 +1,69 @@
 ﻿@using HospitalManagementSystem.Core.DTO
 @model RegisterDTO
 @{
-    // ViewBag.Title = "Login";
-    // ViewBag.CurrentUrl = "~/User/Login";
-    Layout = "";
+	// ViewBag.Title = "Login";
+	// ViewBag.CurrentUrl = "~/User/Login";
+	Layout = "";
 
 }
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
 <div class="container">
-    <div class="brand-logo"></div>
-    <div class="brand-title">REGISTER</div>
-    <div class="inputs">
-        <label>PERSON NAME</label>
-        <input type="text" placeholder="John" />
-        <label>EMAIL</label>
-        <input type="email" placeholder="example@test.com" />
-        <label>PHONE</label>
-        <input type="text" placeholder="0123456789" />
-        <label>PASSWORD</label>
-        <div class="password-container">
-            <input id="password" type="password" placeholder="Min 6 characters long" />
-            <i id="togglePassword" class="fas fa-eye"></i>
-        </div>
-        <label>CONFIRM PASSWORD</label>
-        <div class="password-container">
-            <input id="confirm-password" type="password" placeholder="Min 6 characters long" />
-            <i id="toggleConfirmPassword" class="fas fa-eye"></i>
-        </div>
-        <button type="submit">REGISTER</button>
-        <a href="#">Have an account?</a>
-    </div>
+	<div class="brand-logo"></div>
+	<div class="brand-title">REGISTER</div>
+	<form asp-action="Register" asp-controller="Account" method="post">
+		<div class="inputs">
+
+			@* Name *@
+			<label>PERSON NAME</label>
+			<input asp-for="PersonName" type="text" placeholder="John" />
+			<span asp-validation-for="PersonName" class="text-red"></span>
+
+			@* Email *@
+			<label>EMAIL</label>
+			<input asp-for="Email" type="email" placeholder="example@test.com" />
+			<span asp-validation-for="Email" class="text-red"></span>
+
+			@* Phone *@
+			<label>PHONE</label>
+			<input asp-for="Phone" type="text" placeholder="0123456789" />
+			<span asp-validation-for="Phone" class="text-red"></span>
+
+			@* Password *@
+			<label>PASSWORD</label>
+			<div class="password-container">
+				<input asp-for="Password" id="password" type="password" placeholder="Min 6 characters long" />
+			</div>
+			<span asp-validation-for="Password" class="text-red"></span>
+
+			@* Confirm Password *@
+			<label>CONFIRM PASSWORD</label>
+			<div class="password-container">
+				<input asp-for="ConfirmPassword" id="confirm-password" type="password" placeholder="Min 6 characters long" />
+			</div>
+			<span asp-validation-for="ConfirmPassword" class="text-red"></span>
+			
+			
+			<div class="usertype-options">
+				<input type="radio" id="Admin" asp-for="UserType" value="Admin" checked />
+				<label for="Admin">Admin</label>
+
+				<input type="radio" id="Doctor" asp-for="UserType" value="Doctor" />
+				<label for="Doctor">Doctor</label>
+
+				<input type="radio" id="Patient" asp-for="UserType" value="Patient" />
+				<label for="Patient">Patient</label>
+			</div>
+
+
+			@* Submit *@
+			<button type="submit">REGISTER</button>
+			<a href="#">Have an account?</a>
+		</div>
+	</form>
 </div>
-<script>
-    document.getElementById("togglePassword").addEventListener("click", function () {
-        const passwordField = document.getElementById("password");
-        const isPassword = passwordField.type === "password";
-
-        // Đổi type của input
-        passwordField.type = isPassword ? "text" : "password";
-
-        // Đổi biểu tượng con mắt
-        this.classList.toggle("fa-eye");
-        this.classList.toggle("fa-eye-slash");
-    });
-
-     // Toggle password visibility for "confirm-password" field
-    document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
-        const confirmPasswordField = document.getElementById("confirm-password");
-        const isPassword = confirmPasswordField.type === "password";
-
-        // Toggle the input type
-        confirmPasswordField.type = isPassword ? "text" : "password";
-
-        // Toggle the eye icon
-        this.classList.toggle("fa-eye");
-        this.classList.toggle("fa-eye-slash");
-    });
-</script>
+@section Scripts {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

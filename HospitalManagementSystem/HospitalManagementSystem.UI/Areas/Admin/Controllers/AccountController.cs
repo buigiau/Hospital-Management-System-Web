@@ -1,8 +1,10 @@
 ﻿using HospitalManagementSystem.Core.Domain.IndentityEntities;
 using HospitalManagementSystem.Core.DTO;
+using HospitalManagementSystem.Core.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 {
@@ -31,7 +33,6 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Register(RegisterDTO registerDTO)
 		{
-			//Check for validation errors
 			if (ModelState.IsValid == false)
 			{
 				ViewBag.Errors = ModelState.Values.SelectMany(temp => temp.Errors).Select(temp => temp.ErrorMessage);
@@ -43,7 +44,53 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 			IdentityResult result = await _userManager.CreateAsync(user, registerDTO.Password);
 			if (result.Succeeded)
 			{
-				return RedirectToAction(nameof(HomeController.Index), "Admin");
+				//Check status of radio button
+				if (registerDTO.UserType == Core.Enums.UserTypeOptions.Admin)
+				{
+					//Create 'Admin' role
+					if (await _roleManager.FindByNameAsync(UserTypeOptions.Admin.ToString()) is null)
+					{
+						ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.Admin.ToString() };
+						await _roleManager.CreateAsync(applicationRole);
+					}
+
+					//Add the new user into 'Admin' role
+					await _userManager.AddToRoleAsync(user, UserTypeOptions.Admin.ToString());
+				}
+				else if (registerDTO.UserType == Core.Enums.UserTypeOptions.Doctor)
+				{
+					//Create 'Doctor' role
+					if (await _roleManager.FindByNameAsync(UserTypeOptions.Doctor.ToString()) is null)
+					{
+						ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.Doctor.ToString() };
+						await _roleManager.CreateAsync(applicationRole);
+					}
+
+					//Add the new user into 'Doctor' role
+					await _userManager.AddToRoleAsync(user, UserTypeOptions.Doctor.ToString());
+				}
+				else
+				{
+					//Create 'Patient' role
+					if (await _roleManager.FindByNameAsync(UserTypeOptions.Patient.ToString()) is null)
+					{
+						ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.Patient.ToString() };
+						await _roleManager.CreateAsync(applicationRole);
+					}
+
+					//Add the new user into 'Patient' role
+					await _userManager.AddToRoleAsync(user, UserTypeOptions.Patient.ToString());
+				}
+
+				// Thêm claim cho AccountID
+				// Add Claim for AccountID
+				var accountId = user.Id; // Lấy ID của người dùng
+				await _userManager.AddClaimAsync(user, new Claim("AccountID", accountId.ToString())); // Chuyển đổi thành string
+																									  //Sign in
+				await _signInManager.SignInAsync(user, isPersistent: false);
+
+				/*return RedirectToAction(nameof(HomeController.Index), "Home");*/
+				return RedirectToAction("Login", "Account", new { area = "" });
 			}
 			else
 			{

@@ -21,7 +21,8 @@ body {
 .container {
     position: relative;
     width: 350px;
-    height: 500px;
+    /*height: 500px;*/
+    height: auto;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
@@ -73,6 +74,12 @@ input::placeholder {
     color: gray;
 }
 
+.text-red {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
 input {
     background: #ecf0f3;
     padding: 10px;
@@ -82,33 +89,6 @@ input {
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
-/* Styling cho container password */
-.password-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-    .password-container input {
-        flex: 1;
-        padding-right: 35px; /* Để chừa khoảng trống cho biểu tượng */
-        height: 40px;
-    }
-
-    /* Vị trí và styling của biểu tượng con mắt */
-    .password-container i {
-        position: absolute;
-        right: 10px;
-        cursor: pointer;
-        font-size: 18px;
-        color: #888;
-        user-select: none; /* Ngăn chặn chọn biểu tượng */
-    }
-
-        .password-container i:hover {
-            color: #000; /* Đổi màu khi hover */
-        }
-
 button {
     color: white;
     margin-top: 20px;

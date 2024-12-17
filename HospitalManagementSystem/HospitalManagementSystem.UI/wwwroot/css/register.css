@@ -7,7 +7,8 @@
     align-items: center;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
@@ -42,7 +43,17 @@
     text-align: left;
     margin-top: 20px;
 }
+label {
+    display: block; /* Đảm bảo label chiếm toàn bộ dòng */
+    margin-top: 10px; /* Khoảng cách với phần tử trước */
+    margin-bottom: 5px; /* Khoảng cách với input */
+}
 
+.text-red {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
 input, button {
     display: block;
     width: 100%; /* Đảm bảo chiếm 100% chiều rộng */
@@ -72,19 +83,57 @@ button {
         box-shadow: none;
     }
 
-.password-container {
-    position: relative;
+/* Đảm bảo radio button hiển thị đúng */
+.usertype-options {
+    display: flex; /* Sử dụng flexbox để các phần tử nằm ngang */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    justify-content: center;
 }
 
-    .password-container i {
-        position: absolute;
-        right: 10px;
-        top: 50%; /* Canh giữa theo chiều dọc */
-        transform: translateY(-50%);
-        font-size: 18px;
-        color: #888;
-        cursor: pointer;
+    .usertype-options input[type="radio"] {
+        display: none; /* Ẩn các radio button mặc định */
     }
+
+    .usertype-options label {
+        position: relative;
+        padding-left: 30px; /* Khoảng cách cho vòng tròn */
+        margin-right: 20px; /* Khoảng cách giữa các radio */
+        cursor: pointer;
+        font-size: 15px; /* Cỡ chữ */
+    }
+
+        .usertype-options label::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px; /* Kích thước vòng tròn */
+            height: 15px; /* Kích thước vòng tròn */
+            border-radius: 50%; /* Tạo hình tròn */
+            border: 2px solid #1DA1F2; /* Đường viền cho vòng tròn */
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Thêm bóng cho vòng tròn */
+        }
+
+    /* Khi nút radio được chọn */
+    .usertype-options input[type="radio"]:checked + label::before {
+        background-color: #1DA1F2; /* Màu nền khi chọn */
+        border-color: #1DA1F2; /* Màu viền khi chọn */
+    }
+
+    .usertype-options input[type="radio"]:checked + label::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px; /* Kích thước dấu chấm bên trong */
+        height: 8px;
+        border-radius: 50%; /* Hình tròn cho dấu chọn */
+        background-color: white;
+    }
+
 
 a {
     position: absolute;

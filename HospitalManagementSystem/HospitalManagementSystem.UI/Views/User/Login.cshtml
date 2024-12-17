@@ -1,8 +1,8 @@
 ﻿@using HospitalManagementSystem.Core.DTO
 @model LoginDTO
 @{
-    // ViewBag.Title = "Login";
-    // ViewBag.CurrentUrl = "~/User/Login";
+    ViewBag.Title = "LOGIN";
+    ViewBag.CurrentUrl = "~/User/Login";
     Layout = "";
 
 }
@@ -10,29 +10,33 @@
 <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
 <div class="container">
     <div class="brand-logo"></div>
-    <div class="brand-title">LOGIN</div>
-    <div class="inputs">
-        <label>EMAIL</label>
-        <input type="email" placeholder="example@test.com" />
-        <label>PASSWORD</label>
-        <div class="password-container">
-            <input id="password" type="password" placeholder="Min 6 characters long" />
-            <i id="togglePassword" class="fas fa-eye"></i>
+    <div class="brand-title">@ViewBag.Title</div>
+    <form asp-action="Login" asp-controller="User" method="post">
+        <div class="inputs">
+
+            @* Email *@
+            <label>EMAIL</label>
+            <input asp-for="Email" type="email" placeholder="example@test.com" />
+            <span asp-validation-for="Email" class="text-red"></span>
+
+            @* Password *@
+            <label>PASSWORD</label>
+            <div class="password-container">
+                <input asp-for="Password" id="password" type="password" placeholder="Min 6 characters long" /> 
+            </div>
+            <span asp-validation-for="Password" class="text-red"></span>
+
+            @* Submit *@
+            <button type="submit" value="Login">LOGIN</button>
+            <a href="#">Forgot password?</a>
+
         </div>
-        <button type="submit">LOGIN</button>
-        <a href="#">Forgot password?</a>
-    </div>
+        <div asp-validation-summary="All" class="text-red"></div>
+    </form>
 </div>
-<script>
-    document.getElementById("togglePassword").addEventListener("click", function () {
-        const passwordField = document.getElementById("password");
-        const isPassword = passwordField.type === "password";
 
-        // Đổi type của input
-        passwordField.type = isPassword ? "text" : "password";
-
-        // Đổi biểu tượng con mắt
-        this.classList.toggle("fa-eye");
-        this.classList.toggle("fa-eye-slash");
-    });
-</script>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
