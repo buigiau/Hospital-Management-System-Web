@@ -35,7 +35,7 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 
 
 		//AccountID
-		public Guid Id { get; set; }
+		public Guid? Id { get; set; }
 		public virtual ApplicationUser? ApplicationUser { get; set; }
 
 		// 1 Patient -> Many Treatments
