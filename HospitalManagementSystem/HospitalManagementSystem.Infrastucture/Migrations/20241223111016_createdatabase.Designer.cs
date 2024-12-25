@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalManagementSystem.Infrastucture.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241216100023_CreateDatabase")]
-    partial class CreateDatabase
+    [Migration("20241223111016_createdatabase")]
+    partial class createdatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,7 +95,7 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("DepartmentID")
@@ -112,6 +112,9 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("int");
 
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("LastName")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -122,6 +125,9 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                     b.HasKey("DoctorID");
 
                     b.HasIndex("DepartmentID");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
 
                     b.ToTable("Doctors");
                 });
@@ -154,15 +160,14 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
 
             modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Patient", b =>
                 {
-                    b.Property<Guid>("PatientID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -180,10 +185,13 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid>("PatientID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PatientID");
+                    b.HasKey("Id");
 
                     b.ToTable("Patients");
                 });
@@ -507,6 +515,14 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HospitalManagementSystem.Core.Domain.IndentityEntities.ApplicationUser", "ApplicationUser")
+                        .WithOne()
+                        .HasForeignKey("HospitalManagementSystem.Core.Domain.Entites.Doctor", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
                     b.Navigation("Department");
                 });
 
@@ -519,6 +535,17 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .IsRequired();
 
                     b.Navigation("Treatment");
+                });
+
+            modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Patient", b =>
+                {
+                    b.HasOne("HospitalManagementSystem.Core.Domain.IndentityEntities.ApplicationUser", "ApplicationUser")
+                        .WithOne()
+                        .HasForeignKey("HospitalManagementSystem.Core.Domain.Entites.Patient", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Prescription", b =>

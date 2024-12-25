@@ -76,6 +76,68 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                     b.HasKey("DepartmentID");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            DepartmentID = new Guid("d728f3a9-25ff-453b-b8b0-9f4708e8b6a0"),
+                            Description = "Department specializing in the diagnosis and treatment of heart conditions.",
+                            Name = "Cardiology"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("b2c8d7f2-7d07-4e0e-bd55-21d8a64e315f"),
+                            Description = "Department focused on the treatment of neurological disorders.",
+                            Name = "Neurology"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("8a3019da-f02f-4fc3-97e2-51354f74bb34"),
+                            Description = "Department providing medical care for children.",
+                            Name = "Pediatrics"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("342d07d0-c6f3-4641-b9b5-32b0b6a5012b"),
+                            Description = "Department for treating musculoskeletal system disorders.",
+                            Name = "Orthopedics"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("ad7353f9-d3a6-43ea-9d96-58de10e19a72"),
+                            Description = "Department specializing in the treatment of skin conditions.",
+                            Name = "Dermatology"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("1c6b55b4-beb5-4f36-980d-015e040650b1"),
+                            Description = "Department focusing on diagnostic imaging techniques.",
+                            Name = "Radiology"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("0bb4a1ed-67ac-402f-a51e-e5f8d49ea4f7"),
+                            Description = "Department specializing in the treatment of cancer.",
+                            Name = "Oncology"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("5c029728-0284-4b82-b631-e464f957d2e4"),
+                            Description = "Department providing immediate care for urgent medical conditions.",
+                            Name = "Emergency"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("b9e1c8d5-cd61-40f9-9140-9869c2a17947"),
+                            Description = "Department specializing in the diagnosis and treatment of digestive system disorders.",
+                            Name = "Gastroenterology"
+                        },
+                        new
+                        {
+                            DepartmentID = new Guid("67bb8c9f-cd45-474f-b7d5-7e2fc74d38e0"),
+                            Description = "Department focused on the urinary tract and male reproductive organs.",
+                            Name = "Urology"
+                        });
                 });
 
             modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Doctor", b =>
@@ -92,7 +154,7 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("DepartmentID")
@@ -109,6 +171,9 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("int");
 
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("LastName")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -119,6 +184,9 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                     b.HasKey("DoctorID");
 
                     b.HasIndex("DepartmentID");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
 
                     b.ToTable("Doctors");
                 });
@@ -151,15 +219,14 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
 
             modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Patient", b =>
                 {
-                    b.Property<Guid>("PatientID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -177,12 +244,137 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<Guid>("PatientID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PatientID");
+                    b.HasKey("Id");
 
                     b.ToTable("Patients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b83d3437-6e0a-4b21-a8d3-08dd23e9eb4c"),
+                            Address = "123 Main St, Cityville",
+                            DateOfBirth = new DateTime(1985, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "john.doe@example.com",
+                            FirstName = "John",
+                            Gender = 0,
+                            LastName = "Doe",
+                            PatientID = new Guid("5f4e9a6f-df7b-4d95-bd4c-61bdbcdab928"),
+                            PhoneNumber = "+1234567890"
+                        },
+                        new
+                        {
+                            Id = new Guid("2565ce39-534a-4774-a8d4-08dd23e9eb4c"),
+                            Address = "456 Oak Ave, Townsville",
+                            DateOfBirth = new DateTime(1990, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "jane.smith@example.com",
+                            FirstName = "Jane",
+                            Gender = 1,
+                            LastName = "Smith",
+                            PatientID = new Guid("a3b2c5d8-ef88-4567-81d5-1a96ef519a8a"),
+                            PhoneNumber = "+1987654321"
+                        },
+                        new
+                        {
+                            Id = new Guid("127737de-a92a-42ba-a8d5-08dd23e9eb4c"),
+                            Address = "789 Pine Rd, Greenfield",
+                            DateOfBirth = new DateTime(1982, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "alice.brown@example.com",
+                            FirstName = "Alice",
+                            Gender = 1,
+                            LastName = "Brown",
+                            PatientID = new Guid("bd7263f8-ec8d-4a6f-b8f2-c1d15cd1d925"),
+                            PhoneNumber = "+1122334455"
+                        },
+                        new
+                        {
+                            Id = new Guid("9f1b91a3-08e1-43a9-a8d6-08dd23e9eb4c"),
+                            Address = "321 Birch Blvd, Riverside",
+                            DateOfBirth = new DateTime(1975, 8, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "michael.johnson@example.com",
+                            FirstName = "Michael",
+                            Gender = 0,
+                            LastName = "Johnson",
+                            PatientID = new Guid("4bc8f14e-1e29-45c1-8e6a-b212d4466b64"),
+                            PhoneNumber = "+1555647382"
+                        },
+                        new
+                        {
+                            Id = new Guid("9e8b1fbc-1fcc-4a59-a8d7-08dd23e9eb4c"),
+                            Address = "654 Maple St, Lakeside",
+                            DateOfBirth = new DateTime(1995, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "sophia.williams@example.com",
+                            FirstName = "Sophia",
+                            Gender = 1,
+                            LastName = "Williams",
+                            PatientID = new Guid("7c9d2e2f-5d52-45db-97f9-3d1a626022d4"),
+                            PhoneNumber = "+1612456987"
+                        },
+                        new
+                        {
+                            Id = new Guid("9c9a72ad-ce40-4872-a8d8-08dd23e9eb4c"),
+                            Address = "234 Cedar Ln, Hilltown",
+                            DateOfBirth = new DateTime(1988, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "david.martinez@example.com",
+                            FirstName = "David",
+                            Gender = 0,
+                            LastName = "Martinez",
+                            PatientID = new Guid("2a9bc1c7-56ae-4c90-a8f2-64a622a33244"),
+                            PhoneNumber = "+1703456789"
+                        },
+                        new
+                        {
+                            Id = new Guid("0f240d10-9de9-4b8d-a8d9-08dd23e9eb4c"),
+                            Address = "987 Elm Dr, Brightville",
+                            DateOfBirth = new DateTime(1992, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "olivia.taylor@example.com",
+                            FirstName = "Olivia",
+                            Gender = 1,
+                            LastName = "Taylor",
+                            PatientID = new Guid("a81b23c1-451b-43cd-9dcb-70a4f004ce98"),
+                            PhoneNumber = "+1543728460"
+                        },
+                        new
+                        {
+                            Id = new Guid("a773eb06-a67e-4fec-a8da-08dd23e9eb4c"),
+                            Address = "111 Pinewood Dr, Metrocity",
+                            DateOfBirth = new DateTime(1980, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "ethan.davis@example.com",
+                            FirstName = "Ethan",
+                            Gender = 0,
+                            LastName = "Davis",
+                            PatientID = new Guid("69d7ad97-f17c-4dbf-b8b8-19a1d9da6acb"),
+                            PhoneNumber = "+1709586473"
+                        },
+                        new
+                        {
+                            Id = new Guid("60d23a8b-03c6-4360-a8db-08dd23e9eb4c"),
+                            Address = "432 Willow St, Westwood",
+                            DateOfBirth = new DateTime(1996, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "isabella.miller@example.com",
+                            FirstName = "Isabella",
+                            Gender = 1,
+                            LastName = "Miller",
+                            PatientID = new Guid("d72b318f-8d9e-43fb-8279-cd3b06a13072"),
+                            PhoneNumber = "+1812456789"
+                        },
+                        new
+                        {
+                            Id = new Guid("0f8b0db8-5358-46ac-a8dc-08dd23e9eb4c"),
+                            Address = "876 Spruce Ave, Sunnydale",
+                            DateOfBirth = new DateTime(1993, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "liam.garcia@example.com",
+                            FirstName = "Liam",
+                            Gender = 0,
+                            LastName = "Garcia",
+                            PatientID = new Guid("de623f93-d8f6-4cdb-b4ab-bcf3959a3248"),
+                            PhoneNumber = "+1557448392"
+                        });
                 });
 
             modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Prescription", b =>
@@ -504,6 +696,14 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HospitalManagementSystem.Core.Domain.IndentityEntities.ApplicationUser", "ApplicationUser")
+                        .WithOne()
+                        .HasForeignKey("HospitalManagementSystem.Core.Domain.Entites.Doctor", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
                     b.Navigation("Department");
                 });
 
@@ -516,6 +716,17 @@ namespace HospitalManagementSystem.Infrastucture.Migrations
                         .IsRequired();
 
                     b.Navigation("Treatment");
+                });
+
+            modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Patient", b =>
+                {
+                    b.HasOne("HospitalManagementSystem.Core.Domain.IndentityEntities.ApplicationUser", "ApplicationUser")
+                        .WithOne()
+                        .HasForeignKey("HospitalManagementSystem.Core.Domain.Entites.Patient", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("HospitalManagementSystem.Core.Domain.Entites.Prescription", b =>

@@ -28,6 +28,37 @@ namespace Entites
 		public virtual DbSet<Treatment> Treatments { get; set; }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			// Seed Departments
+			string departmentJson = System.IO.File.ReadAllText("Department.json");
+			List<Department>? departments = System.Text.Json.JsonSerializer.Deserialize<List<Department>>(departmentJson);
+			foreach (Department department in departments)
+				modelBuilder.Entity<Department>().HasData(department);
+
+/*			// Seed Rooms
+			string roomJson = System.IO.File.ReadAllText("Room.json");
+			List<Room>? rooms = System.Text.Json.JsonSerializer.Deserialize<List<Room>>(roomJson);
+			foreach (Room room in rooms)
+				modelBuilder.Entity<Room>().HasData(room);
+
+			// Seed Doctors
+			string doctorJson = System.IO.File.ReadAllText("Doctor.json");
+			List<Doctor>? doctors = System.Text.Json.JsonSerializer.Deserialize<List<Doctor>>(doctorJson);
+			foreach (Doctor doctor in doctors)
+				modelBuilder.Entity<Doctor>().HasData(doctor);*/
+
+			// Seed Patients
+			string patientJson = System.IO.File.ReadAllText("Patient.json");
+			List<Patient>? patients = System.Text.Json.JsonSerializer.Deserialize<List<Patient>>(patientJson);
+			foreach (Patient patient in patients)
+				modelBuilder.Entity<Patient>().HasData(patient);
+			/*
+						// Seed Treatments
+						string treatmentJson = System.IO.File.ReadAllText("Treatment.json");
+						List<Treatment>? treatments = System.Text.Json.JsonSerializer.Deserialize<List<Treatment>>(treatmentJson);
+						foreach (Treatment treatment in treatments)
+							modelBuilder.Entity<Treatment>().HasData(treatment);
+			*/
+
 			base.OnModelCreating(modelBuilder);
 			// Department -> Doctors (1-N)
 			modelBuilder.Entity<Doctor>()
@@ -82,6 +113,17 @@ namespace Entites
 				.HasOne(app => app.Patient)
 				.WithMany(p => p.Appointments)
 				.HasForeignKey(app => app.PatientID);
+
+			modelBuilder.Entity<Patient>()
+				.HasOne(p => p.ApplicationUser)
+				.WithOne()
+				.HasForeignKey<Patient>(p => p.Id);
+
+			modelBuilder.Entity<Doctor>()
+				.HasOne(d => d.ApplicationUser)
+				.WithOne()
+				.HasForeignKey<Doctor>(d => d.Id);
+
 		}
 	}
 }

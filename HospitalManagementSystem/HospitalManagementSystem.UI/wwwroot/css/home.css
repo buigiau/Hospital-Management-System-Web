@@ -1,0 +1,37 @@
+﻿/* Đặt ảnh nền cho toàn bộ trang */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-image: url('~/img/Best Hospital Background Creepy.jpg'); /* Thay 'your-image.jpg' bằng đường dẫn ảnh bạn muốn */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container chứa nút đăng nhập */
+.login-container {
+    text-align: center;
+}
+
+/* Nút đăng nhập */
+.login-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền bán trong suốt */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .login-btn:hover {
+        background-color: rgba(0, 0, 0, 0.9); /* Tăng độ đậm khi hover */
+    }

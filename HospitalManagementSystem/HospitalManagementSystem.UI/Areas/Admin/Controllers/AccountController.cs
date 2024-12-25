@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 {
-	[AllowAnonymous]
+	[Authorize]
 	[Area("Admin")]
 	/*[Authorize(Roles = "Admin")]*/
 	public class AccountController : Controller
@@ -90,7 +90,7 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 				await _signInManager.SignInAsync(user, isPersistent: false);
 
 				/*return RedirectToAction(nameof(HomeController.Index), "Home");*/
-				return RedirectToAction("Login", "Account", new { area = "" });
+				return RedirectToAction("Login", "User", new { area = "" });
 			}
 			else
 			{

@@ -1,0 +1,52 @@
+﻿[
+  {
+    "DepartmentID": "d728f3a9-25ff-453b-b8b0-9f4708e8b6a0",
+    "Name": "Cardiology",
+    "Description": "Department specializing in the diagnosis and treatment of heart conditions."
+  },
+  {
+    "DepartmentID": "b2c8d7f2-7d07-4e0e-bd55-21d8a64e315f",
+    "Name": "Neurology",
+    "Description": "Department focused on the treatment of neurological disorders."
+  },
+  {
+    "DepartmentID": "8a3019da-f02f-4fc3-97e2-51354f74bb34",
+    "Name": "Pediatrics",
+    "Description": "Department providing medical care for children."
+  },
+  {
+    "DepartmentID": "342d07d0-c6f3-4641-b9b5-32b0b6a5012b",
+    "Name": "Orthopedics",
+    "Description": "Department for treating musculoskeletal system disorders."
+  },
+  {
+    "DepartmentID": "ad7353f9-d3a6-43ea-9d96-58de10e19a72",
+    "Name": "Dermatology",
+    "Description": "Department specializing in the treatment of skin conditions."
+  },
+  {
+    "DepartmentID": "1c6b55b4-beb5-4f36-980d-015e040650b1",
+    "Name": "Radiology",
+    "Description": "Department focusing on diagnostic imaging techniques."
+  },
+  {
+    "DepartmentID": "0bb4a1ed-67ac-402f-a51e-e5f8d49ea4f7",
+    "Name": "Oncology",
+    "Description": "Department specializing in the treatment of cancer."
+  },
+  {
+    "DepartmentID": "5c029728-0284-4b82-b631-e464f957d2e4",
+    "Name": "Emergency",
+    "Description": "Department providing immediate care for urgent medical conditions."
+  },
+  {
+    "DepartmentID": "b9e1c8d5-cd61-40f9-9140-9869c2a17947",
+    "Name": "Gastroenterology",
+    "Description": "Department specializing in the diagnosis and treatment of digestive system disorders."
+  },
+  {
+    "DepartmentID": "67bb8c9f-cd45-474f-b7d5-7e2fc74d38e0",
+    "Name": "Urology",
+    "Description": "Department focused on the urinary tract and male reproductive organs."
+  }
+]
