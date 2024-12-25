@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using HospitalManagementSystem.UI.Middleware;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using HospitalManagementSystem.Web.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 });
 
 builder.Services.ConfigureServices(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 var app = builder.Build();
 
