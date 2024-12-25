@@ -38,6 +38,8 @@ namespace HospitalManagementSystem.UI.StartupExtensions
 			services.AddScoped<IPatientService, PatientService>();
 			services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 			services.AddScoped<IDepartmentService, DepartmentService>();
+			services.AddScoped<IDoctorRepository, DoctorRepository>();
+			services.AddScoped<IDoctorService, DoctorService>();
 
 
 
