@@ -1,0 +1,52 @@
+﻿.patient-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.patient-info {
+    flex: 1;
+    padding-right: 20px; /* Adds space between text and image */
+}
+
+.patient-image-container {
+    flex-shrink: 0; /* Prevent the image container from shrinking */
+}
+
+.patient-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.search-form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: right;
+}
+.search-input {
+    padding: 8px;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .search-button:hover {
+        background-color: #0056b3;
+    }

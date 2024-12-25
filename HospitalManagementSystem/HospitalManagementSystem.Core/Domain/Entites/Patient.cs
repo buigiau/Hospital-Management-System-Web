@@ -1,4 +1,5 @@
-﻿using ServiceContracts.Enums;
+﻿using HospitalManagementSystem.Core.Domain.IndentityEntities;
+using ServiceContracts.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,7 +19,7 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 		[StringLength(100)]
 		public string? LastName { get; set; }
 		
-		public DateTime DateOfBirth { get; set; }
+		public DateTime? DateOfBirth { get; set; }
 		
 		[StringLength(10)]
 		public GenderOptions? Gender { get; set; }
@@ -32,10 +33,19 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 		[StringLength(300)]
 		public string? Address { get; set; }
 
+
+		//AccountID
+		public Guid Id { get; set; }
+		public virtual ApplicationUser? ApplicationUser { get; set; }
+
 		// 1 Patient -> Many Treatments
 		public virtual ICollection<Treatment>? Treatments { get; set; }
 
 		// 1 Patient -> Many Appointments
 		public virtual ICollection<Appointment>? Appointments { get; set; }
+		public override string ToString()
+		{
+			return $"Person ID: {PatientID}, Person Name: {FirstName + LastName}, Date of Birth: {DateOfBirth?.ToString("MM/dd/yyyy")}, Gender: {Gender}, Address: {Address}";
+		}
 	}
 }

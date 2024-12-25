@@ -1,0 +1,36 @@
+﻿@model DepartmentDTO
+
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Cảnh báo xóa -->
+<div class="alert alert-danger" role="alert">
+    <strong>Warning!</strong> Are you sure you want to delete the department <strong>@Model.Name</strong>?
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    @Html.AntiForgeryToken()
+
+    <!-- Thêm ID của department vào form -->
+    <input type="hidden" name="id" value="@Model.DepartmentID" />
+
+    <!-- Hiển thị thông tin cần xóa -->
+    <div class="form-group">
+        <!-- Label in đậm và màu xanh -->
+        <label for="Name" class="font-weight-bold text-primary">Department Name</label>
+        <p class="form-control-plaintext">@Model.Name</p>
+    </div>
+
+    <div class="form-group">
+        <!-- Label in đậm và màu xanh -->
+        <label for="Description" class="font-weight-bold text-primary">Description</label>
+        <p class="form-control-plaintext">@Model.Description</p>
+    </div>
+
+    <!-- Nút Xóa -->
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>

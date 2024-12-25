@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DepartmentDTO>
+
+@{
+    ViewData["Title"] = "Departments";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<!-- Table hiển thị danh sách các department -->
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th> <!-- Cột số thứ tự -->
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (department, index) in Model.Select((value, i) => (value, i)))
+        {
+            <tr>
+                <td>@(index + 1)</td> <!-- Số thứ tự -->
+                <td>@department.Name</td>
+                <td>@department.Description</td>
+                <td>
+                    <!-- Nút Edit -->
+                    <a href="@Url.Action("Edit", new { id = department.DepartmentID })" class="btn btn-sm btn-primary">Edit</a>
+
+                    <!-- Nút Delete -->
+                    <a href="@Url.Action("Delete", new { id = department.DepartmentID })" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

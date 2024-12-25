@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PatientDTO>
+
+@{
+    ViewData["Title"] = "Edit Patient";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<!-- Table hiển thị danh sách các patient -->
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th> <!-- Cột số thứ tự -->
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (patient, index) in Model.Select((value, i) => (value, i)))
+        {
+            <tr>
+                <td>@(index + 1)</td> <!-- Số thứ tự -->
+                <td>@patient.FirstName @patient.LastName</td>
+                <td>@(patient.Gender == 0 ? "Male" : "Female")</td>
+                <td>@(DateTime.Now.Year - patient.DateOfBirth?.Year)</td>
+                <td>@patient.PhoneNumber</td>
+                <td>@patient.Address</td>
+                <td>
+                    <!-- Nút Edit -->
+                    <a href="@Url.Action("Edit", new { id = patient.PatientID })" class="btn btn-sm btn-primary">Edit</a>
+
+                    <!-- Nút Delete -->
+                    <a href="@Url.Action("Delete", new { id = patient.PatientID })" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

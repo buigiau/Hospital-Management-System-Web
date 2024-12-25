@@ -1,0 +1,29 @@
+﻿@model DepartmentDTO
+
+@{
+    ViewData["Title"] = "Edit Department";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Form Start -->
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <!-- Label in đậm và đổi màu -->
+        <label for="Name" class="control-label font-weight-bold text-primary">Department Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required />
+    </div>
+
+    <div class="form-group">
+        <!-- Label in đậm và đổi màu -->
+        <label for="Description" class="control-label font-weight-bold text-primary">Description</label>
+        <textarea class="form-control" id="Description" name="Description" rows="4" required>@Model.Description</textarea>
+    </div>
+
+    <!-- Thêm margin-top cho nút submit -->
+    <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary mt-3">Cancel</a>
+</form>
+<!-- Form End -->

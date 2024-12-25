@@ -1,10 +1,10 @@
 using ServiceContracts;
-using HospitalManagementSystem;
+using HospitalManagementSystem.UI.StartupExtensions;
 using Entites;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using HospitalManagementSystem.UI.Middleware;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,14 +51,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-app.MapStaticAssets();
-
-/*app.UseEndpoints(endpoints =>
-{
-	endpoints.MapControllerRoute(
-		name: "default",
-		pattern: "{controller=User}/{action=Login}/{id?}");
-});*/
 app.UseEndpoints(endpoints => {
 	endpoints.MapControllerRoute(
 	 name: "areas",
@@ -72,5 +64,12 @@ app.UseEndpoints(endpoints => {
 	 pattern: "{controller=User}/{action=Login}/{id?}"
 	 );
 });
+
+/*app.UseEndpoints(endpoints =>
+{
+	endpoints.MapControllerRoute(
+		name: "default",
+		pattern: "{controller=User}/{action=Login}/{id?}");
+});*/
 
 app.Run();

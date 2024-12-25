@@ -5,8 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Entites;
+using HospitalManagementSystem.Core.Domain.RepositoryContracts;
+using HospitalManagementSystem.Core.ServiceContracts;
+using HospitalManagementSystem.Core.Services;
+using HospitalManagementSystem.Infrastucture.Repositories;
 
-namespace HospitalManagementSystem
+namespace HospitalManagementSystem.UI.StartupExtensions
 {
 	public static class ConfigureServicesExtension
 	{
@@ -28,6 +32,15 @@ namespace HospitalManagementSystem
 				options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 
 			});
+
+			//Denpendency Injection
+			services.AddScoped<IPatientRepository, PatientRepository>();
+			services.AddScoped<IPatientService, PatientService>();
+			services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+			services.AddScoped<IDepartmentService, DepartmentService>();
+
+
+
 			services.AddDbContext<ApplicationDbContext>(options =>
 			{
 				options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
@@ -48,7 +61,9 @@ namespace HospitalManagementSystem
 
 			 .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
 
+
 			 .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
+
 			services.AddAuthorization(options =>
 			{
 				options.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); //enforces authoriation policy (user must be authenticated) for all the action methods
@@ -64,13 +79,15 @@ namespace HospitalManagementSystem
 
 			services.ConfigureApplicationCookie(options =>
 			{
-				options.LoginPath = "/Account/Login";
+				options.LoginPath = "/User/Login";
 			});
 
 			services.AddHttpLogging(options =>
 			{
 				options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties | Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
+
 			});
+			services.AddHttpContextAccessor();
 
 			return services;
 		}

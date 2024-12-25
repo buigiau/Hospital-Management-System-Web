@@ -4,10 +4,10 @@ using HospitalManagementSystem.Core.DTO;
 using Microsoft.AspNetCore.Identity;
 using HospitalManagementSystem.Core.Domain.IndentityEntities;
 using HospitalManagementSystem.Core.Enums;
+using HospitalManagementSystem.UI.Areas.Admin.Controllers;
 
 namespace HospitalManagementSystem.UI.Controllers
 {
-	[AllowAnonymous]
 	public class UserController : Controller
 	{
 		private readonly UserManager<ApplicationUser> _userManager;
@@ -20,12 +20,14 @@ namespace HospitalManagementSystem.UI.Controllers
 			_roleManager = roleManager;
 		}
 
+		[AllowAnonymous]
 		[HttpGet]
 		public IActionResult Login()
 		{
 			return View();
 		}
 
+		[AllowAnonymous]
 		[HttpPost]
 		public async Task<IActionResult> Login(LoginDTO loginDTO, string? ReturnUrl)
 		{
@@ -70,6 +72,13 @@ namespace HospitalManagementSystem.UI.Controllers
 			ModelState.AddModelError("Login", "Incorrect account or password!");
 			ViewBag.Errors = "Incorrect account or password!";
 			return View(loginDTO);
+		}
+
+		[Authorize]
+		public async Task<IActionResult> Logout()
+		{
+			await _signInManager.SignOutAsync();
+			return Redirect("/User/Login");
 		}
 
 	}
