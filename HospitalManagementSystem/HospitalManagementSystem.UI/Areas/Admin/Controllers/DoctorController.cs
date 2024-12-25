@@ -45,6 +45,11 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 			return View(doctorDto);
 		}
 
+		public async Task<IActionResult> ListToEdit()
+		{
+			var doctors = await _doctorService.GetAllDoctorsAsync();
+			return View(doctors);
+		}
 		public async Task<IActionResult> Edit(Guid id)
 		{
 			var doctor = await _doctorService.GetDoctorByIdAsync(id);

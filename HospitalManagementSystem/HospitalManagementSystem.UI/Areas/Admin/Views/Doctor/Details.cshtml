@@ -1,7 +1,131 @@
-﻿
+﻿@model DoctorDTO
+
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Doctor Details";
 }
 
-<h1>Details</h1>
+<style>
+    /* Background color for the container */
+    .container {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 30px;
+    }
 
+    /* Heading styles */
+    h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    /* Avatar image customization */
+    .avatar-img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #007bff;
+        margin-bottom: 20px;
+    }
+
+    /* Card styles */
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+        background-color: #ffffff;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .card-title {
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+
+    /* List items style */
+    .list-unstyled li {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #495057;
+    }
+
+        .list-unstyled li strong {
+            color: #007bff;
+        }
+
+    /* Button customization */
+    .btn-secondary {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+</style>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Doctor Details</h2>
+
+    <div class="row">
+        <!-- Avatar Image -->
+        <div class="col-md-4 text-center">
+            @if (Model.Gender == 0)
+            {
+                <img src="~/img/doctor.png" alt="Male Avatar" class="img-fluid rounded-circle border avatar-img"/>
+            }
+            else
+            {
+                <img src="~/img/doctor (1).png" alt="Female Avatar" class="img-fluid rounded-circle border avatar-img" />
+            }
+        </div>
+
+        <!-- Patient Info -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Personal Information</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Name: </strong>@Model.FirstName @Model.LastName</li>
+                        <li><strong>Age: </strong>@(DateTime.Now.Year - Model.DateOfBirth?.Year)</li>
+                        <li><strong>Gender: </strong>@(Model.Gender == 0 ? "Male" : "Female")</li>
+                        <li><strong>Phone Number: </strong>@Model.PhoneNumber</li>
+                        <li><strong>Email: </strong>@Model.Email</li>
+                        <li><strong>Address: </strong>@Model.Address</li>
+                    </ul>
+
+                    <!-- Button to go back to the list -->
+                    <a href="@Url.Action("Index", "Doctor")" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

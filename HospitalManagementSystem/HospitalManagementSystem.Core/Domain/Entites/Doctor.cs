@@ -35,13 +35,13 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 		[StringLength (300)]
 		public string? Address { get; set; }
 
-		public Guid DepartmentID { get; set; }
+		public Guid? DepartmentID { get; set; }
 
 		[StringLength(10)]
 		public string? Availability { get; set; }
 
 		//AccountID
-		public Guid Id { get; set; }
+		public Guid? Id { get; set; }
 		public virtual ApplicationUser? ApplicationUser { get; set; }
 
 		[ForeignKey("DepartmentID")]

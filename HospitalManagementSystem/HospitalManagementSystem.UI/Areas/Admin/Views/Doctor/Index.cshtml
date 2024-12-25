@@ -44,6 +44,10 @@
 			border-radius: 20px;
 			padding: 10px 20px;
 		}
+
+			.doctor-card .btn:hover {
+				background-color: #0056b3;
+			}
 </style>
 <h2>Doctor List</h2>
 <div class="container py-5">
@@ -53,16 +57,23 @@
 		{
 			<div class="col">
 				<div class="doctor-card">
-					<img src="https://via.placeholder.com/100" alt="Dr. Smith White">
+					@if (doctor.Gender == 0)
+					{
+						<img src="~/img/doctor.png" alt="Profile Image" />
+					}
+					else
+					{
+						<img src="~/img/doctor (1).png" alt="Profile Image" />
+					}
 					<h5>@doctor.FirstName @doctor.LastName</h5>
 					<p>@doctor.PhoneNumber</p>
 					<p>@doctor.Email</p>
 					<div class="social-icons">
-						<a href="#"><i class="bi bi-facebook"></i></a>
-						<a href="#"><i class="bi bi-twitter"></i></a>
-						<a href="#"><i class="bi bi-linkedin"></i></a>
+						<a href="#"><i class="fa-brands fa-facebook"></i></a>
+						<a href="#"><i class="fa-brands fa-twitter"></i></a>
+						<a href="#"><i class="fa-brands fa-instagram"></i></a>
 					</div>
-					<button class="btn mt-3">View Profile</button>
+					<a href="@Url.Action("Details", "Doctor", new { id = doctor.DoctorID })" class="btn mt-3">View Profile</a>
 				</div>
 			</div>
 		}
