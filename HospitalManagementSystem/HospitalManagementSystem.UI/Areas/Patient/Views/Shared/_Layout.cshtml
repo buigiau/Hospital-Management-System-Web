@@ -82,9 +82,9 @@
         <div class="sidebar">
             <h6 class="mb-4"><i class="fa-solid fa-hospital"></i>Hospital System</h6>
             <hr> <!-- Thêm thanh kẻ ngang -->
-            <a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+            <a href="#"><i class="fa-solid fa-chart-pie"></i> Overview</a>
             <a href="#"><i class="fa-solid fa-user-doctor"></i> Doctors</a>
-            <a href="#"><i class="fa-solid fa-calendar-days"></i> Appointment</a>
+            <a asp-controller="Appointment" asp-action="Index"><i class="fa-solid fa-calendar-days"></i> Appointment</a>
             <a href="#"><i class="fa-solid fa-file-lines"></i> Treatment</a>
             <a href="#"><i class="fa-regular fa-folder"></i> Prescription</a>
             <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
@@ -96,17 +96,28 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Get all the menu items in the sidebar
-        const menuItems = document.querySelectorAll('.sidebar a');
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all the menu items in the sidebar
+            const menuItems = document.querySelectorAll('.sidebar a');
 
-        // Add event listener to each menu item
-        menuItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Remove 'active' class from all menu items
-                menuItems.forEach(i => i.classList.remove('active'));
+            // Add event listener to each menu item
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove 'active' class from all menu items
+                    menuItems.forEach(i => i.classList.remove('active'));
 
-                // Add 'active' class to the clicked menu item
-                this.classList.add('active');
+                    // Add 'active' class to the clicked menu item
+                    this.classList.add('active');
+                });
+            });
+
+            // Optional: Check the current page and mark the correct menu item as active
+            // This part is useful if you want the active class to persist even after page reload
+            const currentUrl = window.location.href;
+            menuItems.forEach(item => {
+                if (currentUrl.includes(item.getAttribute('href'))) {
+                    item.classList.add('active');
+                }
             });
         });
     </script>

@@ -25,7 +25,21 @@ namespace HospitalManagementSystem.Core.Services
 		public async Task<IEnumerable<DoctorDTO>> GetAllDoctorsAsync()
 		{
 			var doctors = await _doctorRepository.GetAllDoctorsAsync();
-			return _mapper.Map<IEnumerable<DoctorDTO>>(doctors);
+			/*			var doctorDTOs = doctors.Select(doctor => new DoctorDTO
+						{
+							DoctorID = doctor.DoctorID,
+							FirstName = doctor.FirstName,
+							LastName = doctor.LastName,
+							DateOfBirth = doctor.DateOfBirth,
+							Email = doctor.Email,
+							PhoneNumber = doctor.PhoneNumber,
+							Address = doctor.Address,
+							Available = doctor.Availability,
+							Gender = doctor.Gender,
+							Department = doctor.Department.Name
+						});*/
+			var doctorDTOs = _mapper.Map<IEnumerable<DoctorDTO>>(doctors);
+			return doctorDTOs;
 		}
 
 		public async Task<DoctorDTO?> GetDoctorByIdAsync(Guid doctorId)
