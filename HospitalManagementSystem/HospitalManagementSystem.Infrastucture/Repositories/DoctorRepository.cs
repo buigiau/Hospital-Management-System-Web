@@ -21,8 +21,11 @@ namespace HospitalManagementSystem.Infrastucture.Repositories
 
 		public async Task<IEnumerable<Doctor>> GetAllDoctorsAsync()
 		{
-			return await _context.Doctors.ToListAsync();
+			return await _context.Doctors
+								 .Include(d => d.Department)  
+								 .ToListAsync();
 		}
+
 
 		public async Task<Doctor?> GetDoctorByIdAsync(Guid doctorId)
 		{
