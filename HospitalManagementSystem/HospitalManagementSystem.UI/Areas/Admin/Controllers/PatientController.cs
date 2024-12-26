@@ -1,6 +1,7 @@
 ﻿using HospitalManagementSystem.Core.Domain.Entites;
 using HospitalManagementSystem.Core.DTO;
 using HospitalManagementSystem.Core.ServiceContracts;
+using HospitalManagementSystem.Core.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -67,6 +68,9 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 				PhoneNumber = patient.PhoneNumber,
 				Email = patient.Email,
 				Address = patient.Address,
+				Height = patient.Height,
+				Weight = patient.Weight,
+				BloodGroup = patient.BloodGroup,
 			};
 
 			return View(patientDto);
@@ -82,21 +86,22 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 		// POST: Patient/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([FromForm] Patient patient)
+		public async Task<IActionResult> Create(PatientDTO patientDto)
 		{
-			if (!ModelState.IsValid)
-				return View(patient);  // Trả lại form nếu có lỗi trong việc xác thực
-
-			await _patientService.AddAsync(patient);
-			return RedirectToAction(nameof(Index));  // Sau khi tạo, chuyển đến trang danh sách bệnh nhân
+			if (ModelState.IsValid)
+			{
+				await _patientService.AddAsync(patientDto);
+				return RedirectToAction(nameof(Index));
+			}
+			return View(patientDto);
 		}
+
 		public async Task<IActionResult> ListToEdit()
 		{
-			// Lấy tất cả bệnh nhân dưới dạng Patient
-			var patients = await _patientService.GetAllAsync();
 
-			// Chuyển đổi từ danh sách Patient sang danh sách PatientDTO
-			var patientDtos = patients.Select(patient => new PatientDTO
+			List<Patient> patients = (List<Patient>)await _patientService.GetAllAsync();
+
+			List<PatientDTO> patientDtos = patients.Select(patient => new PatientDTO
 			{
 				PatientID = patient.PatientID,
 				FirstName = patient.FirstName,
@@ -107,9 +112,9 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 				PhoneNumber = patient.PhoneNumber,
 				Address = patient.Address,
 			}).ToList();
-
-			return View(patientDtos);  // Trả về View để hiển thị danh sách bệnh nhân dưới dạng DTO
+			return View(patientDtos);
 		}
+
 		// GET: Patient/Edit/5
 		[HttpGet]
 		public async Task<IActionResult> Edit(Guid id)

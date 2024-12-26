@@ -10,6 +10,7 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 {
 	public class Room
 	{
+		[Key]
 		public Guid RoomID { get; set; }
 
 		public int RoomNumber { get; set; }

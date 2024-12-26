@@ -32,7 +32,7 @@ namespace HospitalManagementSystem.Infrastucture.Repositories
 
 		public async Task AddAsync(Patient patient)
 		{
-			await _context.Patients.AddAsync(patient);
+			_context.Patients.Add(patient);
 			await _context.SaveChangesAsync();
 		}
 

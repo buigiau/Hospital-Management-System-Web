@@ -9,9 +9,12 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 {
 	public class Department
 	{
+		[Key]
 		public Guid DepartmentID { get; set; }
+
 		[StringLength(100)]
 		public string? Name { get; set; }
+
 		[StringLength(500)]
 		public string? Description { get; set; }
 

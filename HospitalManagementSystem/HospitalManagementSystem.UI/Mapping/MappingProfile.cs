@@ -10,6 +10,7 @@ namespace HospitalManagementSystem.Web.Mapping
 		public MappingProfile()
 		{
 			CreateMap<Doctor, DoctorDTO>().ForMember(dest=>dest.Department, opt => opt.MapFrom(src => src.Department.Name)).ReverseMap();
+			CreateMap<Patient, PatientDTO>().ReverseMap();
 		}
 	}
 }

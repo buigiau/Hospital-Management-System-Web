@@ -10,6 +10,7 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 {
 	public class Invoice
 	{
+		[Key]
 		public Guid InvoiceID { get; set; }
 
 		public Guid TreatmentID { get; set; }

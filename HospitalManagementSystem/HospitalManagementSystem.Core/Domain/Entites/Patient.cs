@@ -11,6 +11,7 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 {
 	public class Patient
 	{
+		[Key]
 		public Guid PatientID { get; set; }
 		
 		[StringLength(100)]
@@ -33,9 +34,16 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 		[StringLength(300)]
 		public string? Address { get; set; }
 
+		public float? Height { get; set; }
+
+		public float? Weight { get; set; }
+
+		[StringLength(10)]
+		public string? BloodGroup { get; set; }
 
 		//AccountID
 		public Guid? Id { get; set; }
+
 		public virtual ApplicationUser? ApplicationUser { get; set; }
 
 		// 1 Patient -> Many Treatments

@@ -34,6 +34,10 @@ namespace HospitalManagementSystem.Core.DTO
 		[Required(ErrorMessage = "Address can not be blank!")]
 		public string? Address { get; set; }
 
-		public int Appointment {  get; set; }
+		public float? Height { get; set; }
+
+		public float? Weight { get; set; }
+
+		public string? BloodGroup { get; set; }
 	}
 }

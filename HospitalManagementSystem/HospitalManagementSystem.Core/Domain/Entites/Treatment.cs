@@ -10,6 +10,7 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 {
 	public class Treatment
 	{
+		[Key]
 		public Guid TreatmentID { get; set; }
 
 		public Guid PatientID { get; set; }
