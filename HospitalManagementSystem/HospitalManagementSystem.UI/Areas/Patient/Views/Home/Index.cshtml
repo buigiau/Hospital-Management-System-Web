@@ -1,0 +1,194 @@
+﻿@model Patient
+
+<style>
+    .main-content {
+        padding: 30px;
+        background-color: #f5f7fa;
+    }
+
+    .profile-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 30px; /* Tăng kích thước padding */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+        .profile-card img {
+            width: 120px; /* Tăng kích thước ảnh */
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .profile-card h5 {
+            font-size: 1.6rem; /* Tăng kích thước font */
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .profile-card p {
+            font-size: 1rem; /* Tăng kích thước font */
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+    .chart-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+        .chart-card h6 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+    .circle-progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px; /* Tăng kích thước vòng tròn */
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+        .circle-progress span {
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+        }
+
+    .general-health {
+        background: #f8d7da; /* Màu đỏ nhạt */
+        border: 5px solid #dc3545; /* Viền đỏ */
+    }
+
+    .water-balance {
+        background: #cce5ff; /* Màu xanh nước biển nhạt */
+        border: 5px solid #007bff; /* Viền xanh nước biển */
+    }
+
+    .appointment-card {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .appointment-card span {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+            .appointment-card span:nth-child(2) {
+                font-weight: normal;
+            }
+
+            .appointment-card span:last-child {
+                color: #007bff;
+            }
+
+    .row {
+        margin-bottom: 30px;
+    }
+
+</style>
+
+<div class="main-content flex-grow-1">
+    <div class="row">
+        <!-- Profile Section -->
+        <div class="col-md-3">
+            <div class="profile-card">
+                @if (Model.Gender == 0)
+                {
+                    <img src="~/img/boy.png" alt="Male Avatar" class="rounded-circle mb-3">
+                }
+                else
+                {
+                    <img src="~/img/girl.png" alt="Female Avatar" class="rounded-circle mb-3">
+                }
+                <h5>@Model.FirstName @Model.LastName</h5>
+                <p>@Model.Email</p>
+                <p>@Model.PhoneNumber</p>
+                <p>Age: 23</p>
+                <p>Blood Group: @Model.BloodGroup</p>
+                <p>Height (cm): @Model.Height</p>
+                <p>Weight (kg): @Model.Weight</p>
+            </div>
+        </div>
+
+        <!-- Health Data Section -->
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="chart-card">
+                        <h6>General Health</h6>
+                        <div class="circle-progress general-health">
+                            <span>75%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-card">
+                        <h6>Water Balance</h6>
+                        <div class="circle-progress water-balance">
+                            <span>83%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h6>Your Activity</h6>
+                <p>Weekly activity data here</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Health Conditions Section -->
+    <div class="chart-card mt-4">
+        <h6>Your Health Conditions</h6>
+        <p>Health condition data over months</p>
+    </div>
+
+    <!-- Doctor Appointments Section -->
+    <div class="chart-card mt-4">
+        <h6>Doctor Appointments</h6>
+        <div class="appointment-card">
+            <span>Dentist</span>
+            <span>Dr. Gorex Methew</span>
+            <span>9:00 AM</span>
+        </div>
+        <div class="appointment-card">
+            <span>Cardiologist</span>
+            <span>Dr. Craig Gemx</span>
+            <span>12:00 PM</span>
+        </div>
+        <div class="appointment-card">
+            <span>Orthopedist</span>
+            <span>Dr. Bruce Williams</span>
+            <span>3:00 PM</span>
+        </div>
+        <div class="appointment-card">
+            <span>Physician</span>
+            <span>Dr. Kiera Knight</span>
+            <span>4:00 PM</span>
+        </div>
+        <div class="appointment-card">
+            <span>Endocrinologist</span>
+            <span>Dr. Anni Roy</span>
+            <span>6:00 PM</span>
+        </div>
+    </div>
+</div>

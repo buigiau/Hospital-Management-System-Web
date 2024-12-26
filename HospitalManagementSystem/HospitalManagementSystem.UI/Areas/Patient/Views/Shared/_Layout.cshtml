@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f7fa;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            min-height: 100vh;
+            width: 250px;
+            padding: 20px;
+            border-right: 1px solid #e5e5e5;
+        }
+
+            .sidebar img {
+                margin-bottom: 20px;
+            }
+
+            .sidebar h6 {
+                color: #4169E1;
+                font-weight: bold;
+                font-size: 1.25rem;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+                .sidebar h6 i {
+                    margin-right: 10px; /* Khoảng cách giữa icon và văn bản */
+                    font-size: 1.4rem;
+                }
+
+            .sidebar hr {
+                border: 0;
+                border-top: 2px solid #000000;
+                margin: 15px 0;
+            }
+
+            .sidebar a {
+                text-decoration: none;
+                color: #4169E1;
+                display: flex;
+                align-items: center;
+                margin: 12px 0;
+                font-weight: 500;
+                font-size: 1rem;
+                padding: 8px 15px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .sidebar a:hover {
+                    background-color: #f0f0f0;
+                }
+
+            .sidebar i {
+                margin-right: 12px;
+                font-size: 1.2rem;
+            }
+
+            .sidebar a.active {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="sidebar">
+            <h6 class="mb-4"><i class="fa-solid fa-hospital"></i>Hospital System</h6>
+            <hr> <!-- Thêm thanh kẻ ngang -->
+            <a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+            <a href="#"><i class="fa-solid fa-user-doctor"></i> Doctors</a>
+            <a href="#"><i class="fa-solid fa-calendar-days"></i> Appointment</a>
+            <a href="#"><i class="fa-solid fa-file-lines"></i> Treatment</a>
+            <a href="#"><i class="fa-regular fa-folder"></i> Prescription</a>
+            <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Get all the menu items in the sidebar
+        const menuItems = document.querySelectorAll('.sidebar a');
+
+        // Add event listener to each menu item
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove 'active' class from all menu items
+                menuItems.forEach(i => i.classList.remove('active'));
+
+                // Add 'active' class to the clicked menu item
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

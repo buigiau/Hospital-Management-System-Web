@@ -1,8 +1,10 @@
-﻿using HospitalManagementSystem.Core.Domain.Entites;
+﻿using AutoMapper;
+using HospitalManagementSystem.Core.Domain.Entites;
 using HospitalManagementSystem.Core.Domain.RepositoryContracts;
 using HospitalManagementSystem.Core.DTO;
 using HospitalManagementSystem.Core.Helpers;
 using HospitalManagementSystem.Core.ServiceContracts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +16,11 @@ namespace HospitalManagementSystem.Core.Services
 	public class PatientService : IPatientService
 	{
 		private readonly IPatientRepository _repository;
-
-		public PatientService(IPatientRepository repository)
+		private readonly IMapper _mapper;
+		public PatientService(IPatientRepository repository, IMapper mapper)
 		{
 			_repository = repository;
+			_mapper = mapper;
 		}
 
 		public async Task<IEnumerable<Patient>> GetAllAsync()
@@ -30,8 +33,9 @@ namespace HospitalManagementSystem.Core.Services
 			return await _repository.GetByIdAsync(id);
 		}
 
-		public async Task AddAsync(Patient patient)
+		public async Task AddAsync(PatientDTO patientDto)
 		{
+			var patient = _mapper.Map<Patient>(patientDto);
 			await _repository.AddAsync(patient);
 		}
 
