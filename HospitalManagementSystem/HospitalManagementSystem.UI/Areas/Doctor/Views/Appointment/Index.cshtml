@@ -1,0 +1,164 @@
+﻿@model IEnumerable<dynamic>
+<style>
+	.content {
+		margin-left: 270px; /* Khớp với chiều rộng sidebar */
+		padding: 30px;
+		transition: all 0.3s ease;
+		min-height: 100vh;
+		background-color: #f4f6f9; /* Màu nền nhẹ */
+		font-family: 'Arial', sans-serif;
+	}
+
+	/* Định dạng cho table */
+	.table {
+		border-radius: 12px;
+		overflow: hidden;
+		margin-bottom: 0;
+	}
+
+		/* Thêm bóng cho các hàng trong bảng */
+		.table th, .table td {
+			padding: 10px;
+			text-align: center;
+		}
+
+		/* Màu nền cho các hàng trong bảng */
+		.table tbody tr:nth-child(even) {
+			background-color: #f1f1f1;
+		}
+
+		/* Thêm hiệu ứng hover cho hàng bảng */
+		.table tbody tr:hover {
+			background-color: #e0e0e0;
+		}
+
+	/* Định dạng cho các button */
+	.btn {
+		border-radius: 5px;
+		padding: 8px 16px;
+		font-size: 14px;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+	}
+
+	/* Hiệu ứng hover cho các nút */
+	.btn-success:hover {
+		background-color: #218838;
+		transform: translateY(-2px);
+	}
+
+	.btn-danger:hover {
+		background-color: #c82333;
+		transform: translateY(-2px);
+	}
+
+	/* Kiểu dáng cho các cột trạng thái */
+	.badge {
+		padding: 5px 10px;
+		font-size: 14px;
+		border-radius: 12px;
+	}
+
+	/* Màu cho các trạng thái */
+	.badge-completed {
+		background-color: #28a745;
+		color: white;
+	}
+
+	.badge-scheduled {
+		background-color: #ffc107;
+		color: black;
+	}
+
+	.badge-cancelled {
+		background-color: #dc3545;
+		color: white;
+	}
+
+	.badge-no-show {
+		background-color: #6c757d;
+		color: white;
+	}
+
+	/* Định dạng cho các cột Action */
+	.action-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+	}
+</style>
+
+<div class="content">
+	<div class="container mt-5">
+		<h1 class="text-center mb-4" style="color: #5c6bc0; font-family: 'Roboto', sans-serif;">Your Appointments</h1>
+
+		@if (!Model.Any())
+		{
+			<div class="alert alert-warning text-center" role="alert">
+				You have no appointments.
+			</div>
+		}
+		else
+		{
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover align-middle shadow-lg">
+					<thead class="thead-dark text-center" style="background-color: #3f51b5; color: white;">
+						<tr>
+							<th>Date</th>
+							<th>Status</th>
+							<th>Doctor</th>
+							<th>Room Number</th>
+							<th>Action</th> <!-- New Action Column -->
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var appointment in Model)
+						{
+							<tr>
+								<td class="text-center">@appointment.AppointmentDate.ToString("dd/MM/yyyy HH:mm")</td>
+								<td class="text-center">
+									@if (appointment.Status == "Completed")
+									{
+										<span class="badge badge-completed">Complete</span>
+									}
+									else if (appointment.Status == "Scheduled")
+									{
+										<span class="badge badge-scheduled">Scheduled</span>
+									}
+									else if (appointment.Status == "Cancelled")
+									{
+										<span class="badge badge-cancelled">Cancelled</span>
+									}
+									else if (appointment.Status == "No Show")
+									{
+										<span class="badge badge-no-show">No Show</span>
+									}
+								</td>
+								<td>@appointment.PatientFullName</td>
+								<td class="text-center">@appointment.RoomNumber</td>
+								<td class="text-center">
+									@if (appointment.Status == "Scheduled")
+									{
+										<!-- Action buttons for Scheduled status -->
+										<div class="action-buttons">
+											<form method="post" asp-action="AcceptAppointment" asp-route-appointmentId="@appointment.AppointmentID">
+												<button type="submit" class="btn btn-success">Accept</button>
+											</form>
+											<form method="post" asp-action="CancelAppointment" asp-route-appointmentId="@appointment.AppointmentID">
+												<button type="submit" class="btn btn-danger">Cancel</button>
+											</form>
+										</div>
+									}
+									else
+									{
+										<!-- Display blank for other statuses -->
+										<span>___</span>
+									}
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		}
+	</div>
+</div>

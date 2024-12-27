@@ -1,0 +1,58 @@
+﻿@model IEnumerable<dynamic>
+<style>
+    .content {
+        margin-left: 270px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+    }
+
+    table th {
+        background-color: #007BFF !important; 
+        color: white;
+        font-size: 20px;
+    }
+
+    .table thead {
+        background-color: #007BFF;
+    }
+</style>
+<div class="content">
+<h2 class="mt-4 text-center" style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; color: #4169E1;">Treatment List</h2>
+    <table class="table table-striped table-hover table-bordered" style="width: 95%; margin: 40px auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 18px;">
+        <thead class="text-center" style="border-radius: 8px;">
+            <tr>
+                <th scope="col" class="text-light" style="font-size: 20px;">Treatment Title</th>
+                <th scope="col" class="text-light" style="font-size: 20px;">Treatment Date</th>
+                <th scope="col" class="text-light" style="font-size: 20px;">Your Patient</th>
+                <th scope="col" class="text-light" style="font-size: 20px;">Follow-Up Date</th>
+                <th scope="col" class="text-light" style="font-size: 20px;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var treatment in Model)
+            {
+                <tr>
+                    <td class="text-center" style="font-size: 18px; color: #1E90FF; font-weight: 500; padding: 15px;">@treatment.TreatmentTitle</td>
+
+                    <td class="text-center" style="font-size: 18px; color: black; font-weight: 500; padding: 15px;">@treatment.TreatmentDate.ToString("dd/MM/yyyy")</td>
+
+                    <td class="text-center" style="font-size: 18px; color: #1E90FF; font-weight: 500; padding: 15px;">@treatment.PatientFullName</td>
+
+                    <td class="text-center" style="font-size: 18px; color: black; font-weight: 500; padding: 15px;">@treatment.FollowUpDate?.ToString("dd/MM/yyyy")</td>
+
+                    <!-- Action Button with Hover Effect -->
+                    <td class="text-center" style="padding: 15px;">
+                        <a href="@Url.Action("Details", "Treatment", new { treatmentId = treatment.TreatmentID })" class="btn btn-outline-primary btn-sm" style="transition: background-color 0.3s, color 0.3s; font-weight: 500;" onmouseover="this.style.backgroundColor='#007bff'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#007bff'">
+                            View Details
+                        </a>
+                        <a href="@Url.Action("Edit", "Treatment", new { treatmentId = treatment.TreatmentID })" class="btn btn-outline-warning btn-sm" style="transition: background-color 0.3s, color 0.3s; font-weight: 500; margin-left: 10px;" onmouseover="this.style.backgroundColor='#FFC107'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FFC107'">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

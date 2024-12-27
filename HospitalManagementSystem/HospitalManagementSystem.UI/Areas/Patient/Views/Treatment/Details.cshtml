@@ -4,19 +4,32 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <!-- Adjust column size to make form wider -->
+        <div class="col-md-10 col-lg-8">
             <!-- Treatment Information Section -->
-            <div class="card shadow-sm p-4 mb-4" style="background-color: #f8f9fa;">
-                <h4 class="text-success" style="font-size: 24px; font-weight: bold;">@Model.TreatmentTitle</h4>
-                <p><strong class="text-info">Treatment Date:</strong> <span class="text-dark">@Model.TreatmentDate.ToString("dd/MM/yyyy")</span></p>
-                <p><strong class="text-info">Doctor:</strong> <span class="text-dark">@Model.DoctorFullName</span></p>
-                <p><strong class="text-info">Treatment Details:</strong> <span class="text-dark">@Model.TreatmentDetail</span></p>
-                <p><strong class="text-info">Follow-Up Date:</strong> <span class="text-dark">@Model.FollowUpDate?.ToString("dd/MM/yyyy")</span></p>
+            <div class="card shadow-sm p-5 mb-4" style="background-color: #f8f9fa; border-radius: 10px;">
+                <h4 class="text-success" style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">@Model.TreatmentTitle</h4>
+                <p style="font-size: 20px; line-height: 1.8;">
+                    <strong class="text-info">Treatment Date:</strong> <span class="text-dark">@Model.TreatmentDate.ToString("dd/MM/yyyy")</span>
+                </p>
+                <p style="font-size: 20px; line-height: 1.8;">
+                    <strong class="text-info">Doctor:</strong> <span class="text-dark">@Model.DoctorFullName</span>
+                </p>
+                <p style="font-size: 20px; line-height: 1.8;">
+                    <strong class="text-info">Treatment Details:</strong> <span class="text-dark">@Model.TreatmentDetail</span>
+                </p>
+                <p style="font-size: 20px; line-height: 1.8;">
+                    <strong class="text-info">Follow-Up Date:</strong> <span class="text-dark">@Model.FollowUpDate?.ToString("dd/MM/yyyy")</span>
+                </p>
             </div>
 
-            <!-- Back to Treatment List button with Bootstrap styling -->
+            <!-- Back to Treatment List button with larger size -->
             <div class="text-center">
-                <a href="@Url.Action("Index", new { patientId = ViewData["PatientId"] })" class="btn btn-outline-primary btn-lg mt-4" style="width: 200px;">Back to Treatment List</a>
+                <a href="@Url.Action("Index", new { patientId = ViewData["PatientId"] })"
+                   class="btn btn-outline-primary mt-4"
+                   style="width: 180px; font-size: 18px; font-weight: bold; padding: 10px 0;">
+                    Back
+                </a>
             </div>
         </div>
     </div>

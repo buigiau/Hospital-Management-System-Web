@@ -1,1 +1,228 @@
-﻿<h1>Hello</h1>
+﻿@model Doctor
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    /* Tổng quan về nội dung */
+    .content {
+        margin-left: 270px; /* Khớp với chiều rộng sidebar */
+        padding: 30px;
+        transition: all 0.3s ease;
+        min-height: 100vh;
+        background-color: #f4f6f9; /* Màu nền nhẹ */
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Chỉnh layout của thẻ chứa card và chart */
+    .row-flex {
+        display: flex;
+        justify-content: space-between; /* Căn đều các phần tử */
+        gap: 30px; /* Khoảng cách giữa thẻ card và biểu đồ */
+    }
+
+    /* Card thông tin bác sĩ */
+    .profile-card {
+        background-color: #fff;
+        text-align: center;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        flex-basis: 50%; /* Đảm bảo kích thước bằng nhau */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        /* Ảnh đại diện của bác sĩ */
+        .profile-card img {
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            border: 4px solid #4e73df;
+            margin-bottom: 20px;
+        }
+
+        /* Tên bác sĩ */
+        .profile-card h5 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Thông tin phòng ban, email, số điện thoại */
+        .profile-card p {
+            font-size: 1rem;
+            color: #666;
+            margin: 5px 0;
+        }
+
+            .profile-card p strong {
+                color: #333;
+            }
+
+    .table {
+        margin-top: 30px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #4e73df;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1; /* Hiệu ứng hover cho hàng */
+        }
+
+    /* Cải tiến thanh tiến độ */
+    .progress-bar {
+        background-color: #4e73df;
+        height: 10px;
+        border-radius: 5px;
+    }
+
+    .mt-4 {
+        margin-top: 40px;
+    }
+
+    /* Chart Appointment */
+    .chart-container {
+        max-width: 600px;
+        flex-basis: 50%; /* Đảm bảo kích thước bằng nhau */
+        background-color: #4e73df; /* Nền xanh nước biển */
+        padding: 20px; /* Khoảng cách nội dung */
+        border-radius: 10px; /* Bo góc mềm mại */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng */
+    }
+
+    .section-header {
+        font-size: 1.5rem;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .section-header-black {
+        font-size: 1.5rem;
+        color: black; /* Đổi màu thành đen */
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+</style>
+
+<!-- Main Content -->
+<div class="content">
+    <div class="row-flex">
+        <!-- Biểu đồ đếm số lượng appointment trong tuần -->
+        <div class="chart-container">
+            <div class="section-header">Appointments in This Week</div>
+            <canvas id="appointmentsChart"></canvas>
+        </div>
+
+        <!-- Thẻ card thông tin bác sĩ -->
+        <div class="profile-card">
+            @if (Model.Gender == 0)
+            {
+                <img src="~/img/doctor-male.png" alt="Male Avatar" class="rounded-circle mb-3">
+            }
+            else
+            {
+                <img src="~/img/doctor-female.png" alt="Female Avatar" class="rounded-circle mb-3">
+            }
+            <h5>@Model.FirstName @Model.LastName</h5>
+            <p><strong>@Model.Department.Name</strong></p>
+            <p>@Model.Email</p>
+            <p>@Model.PhoneNumber</p>
+            <p>
+                @(Model.DateOfBirth.HasValue ? Model.DateOfBirth.Value.ToString("dd/MM/yyyy") : "N/A")
+            </p>
+            <p>@Model.Address</p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="section-header-black">Patient Information</div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Weight</th>
+                        <th>Disease</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arthur Sandoval</td>
+                        <td>Male</td>
+                        <td>75 kg</td>
+                        <td>Cardiology</td>
+                        <td>15 Oct</td>
+                        <td>Complete</td>
+                    </tr>
+                    <tr>
+                        <td>Joseph Stephens</td>
+                        <td>Male</td>
+                        <td>81 kg</td>
+                        <td>Diabetes</td>
+                        <td>12 Oct</td>
+                        <td>Complete</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Dữ liệu tự chế cho chart
+        var ctx = document.getElementById('appointmentsChart').getContext('2d');
+    var appointmentsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Ngày trong tuần
+            datasets: [{
+                label: '# of Appointments',
+                data: [3, 5, 2, 4, 6, 7, 3], // Số lượng appointment giả định trong tuần
+                backgroundColor: 'rgba(0, 0, 0, 0.8)', // Màu nền cột đen
+                borderColor: 'rgba(0, 0, 0, 1)', // Màu viền cột đen
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white' // Màu chữ của chú thích
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white' // Màu chữ của trục X
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: 'white' // Màu chữ của trục Y
+                    }
+                }
+            }
+        }
+    });
+</script>

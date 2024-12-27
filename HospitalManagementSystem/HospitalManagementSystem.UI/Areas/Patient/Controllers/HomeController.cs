@@ -20,12 +20,12 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 		public async Task<IActionResult> Index(Guid id)
 		{
 			var patient = await _context.Patients
-				.FirstOrDefaultAsync(p => p.ApplicationUser.Id == id); 
+				.FirstOrDefaultAsync(p => p.ApplicationUser.Id == id);
 
 			if (patient == null)
 				return NotFound();
 
 			return View(patient);
-	}
+		}
 	}
 }

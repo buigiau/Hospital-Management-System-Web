@@ -1,0 +1,47 @@
+﻿<style>
+	.content {
+		margin-left: 270px;
+		padding: 30px;
+		transition: all 0.3s ease;
+		min-height: 100vh;
+		font-family: 'Arial', sans-serif;
+	}
+</style>
+<div class="content">
+	<h2 class="text-center text-primary mt-4 mb-4" style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; color: #007bff;">Prescription Details</h2>
+	@foreach (var prescription in Model)
+	{
+		<div class="container mt-4">
+			<div class="card">
+				<!-- Card Header with blue background and white text -->
+				<div class="card-header" style="background-color: #007BFF; color: white;">
+					<h5>@prescription.Title</h5>
+				</div>
+				<div class="card-body">
+					<!-- Medication Name with default text color -->
+					<p><strong class="text-dark">Medication Name:</strong> @prescription.MedicationName</p>
+					<!-- Dosage with default text color -->
+					<p><strong class="text-dark">Dosage:</strong> @prescription.Dosage</p>
+					<!-- Instruction in red text color -->
+					<p><strong class="text-danger">Instruction:</strong> @prescription.Instruction</p>
+					<!-- Treatment Date with default text color -->
+					<p><strong class="text-dark">Treatment Date:</strong> @prescription.TreatmentDate.ToString("dd/MM/yyyy")</p>
+					<!-- Doctor name with default text color -->
+					<p><strong class="text-dark">Patient:</strong> @prescription.PatientFullName</p>
+				</div>
+				<!-- Card footer with Edit and Delete buttons -->
+				<div class="card-footer bg-light d-flex justify-content-between">
+					<!-- Edit Button -->
+					<a href="@Url.Action("Edit", "Prescription", new { prescriptionId = prescription.PrescriptionID })" class="btn btn-warning btn-sm" style="font-weight: 500; transition: background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#FFC107'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FFC107'">
+						Edit
+					</a>
+
+					<!-- Delete Button -->
+					<a href="@Url.Action("Delete", "Prescription", new { prescriptionId = prescription.PrescriptionID })" class="btn btn-danger btn-sm" style="font-weight: 500; transition: background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='#DC3545'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#DC3545'">
+						Delete
+					</a>
+				</div>
+			</div>
+		</div>
+	}
+</div>
