@@ -51,7 +51,8 @@ namespace HospitalManagementSystem.UI.Controllers
 					}
 					else if (await _userManager.IsInRoleAsync(user, UserTypeOptions.Doctor.ToString()))
 					{
-						return RedirectToAction("Index", "Home", new { area = "Doctor" });
+						var id = user.Id;
+						return RedirectToAction("Index", "Home", new { area = "Doctor", id });
 					}
 					else if (await _userManager.IsInRoleAsync(user, UserTypeOptions.Patient.ToString()))
 					{

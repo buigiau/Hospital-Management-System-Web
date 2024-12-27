@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
+namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 {
-	[Area("Patient")]
+	[Area("Doctor")]
 	[Authorize]
 	public class TreatmentController : Controller
 	{
@@ -14,7 +14,7 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 		{
 			_context = context;
 		}
-		public async Task<IActionResult> Index(Guid patientId)
+		public async Task<IActionResult> Index(Guid doctorId)
 		{
 			var applicationUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
 
@@ -24,23 +24,23 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 			}
 
 			// Tìm PatientID tương ứng với ApplicationUserID
-			var patient = await _context.Patients
+			var doctor = await _context.Doctors
 				.FirstOrDefaultAsync(p => p.ApplicationUser.Id == Guid.Parse(applicationUserId));
 
-			if (patient == null)
+			if (doctor == null)
 			{
-				return NotFound("Không tìm thấy thông tin bệnh nhân của bạn.");
+				return NotFound("Can not find this doctor.");
 			}
 
 			var treatments = await _context.Treatments
-				.Where(t => t.PatientID == patient.PatientID)
-				.Include(t => t.Doctor)
+				.Where(t => t.DoctorID == doctor.DoctorID)
+				.Include(t => t.Patient)
 				.Select(t => new
 				{
 					TreatmentID = t.TreatmentID,
 					TreatmentDate = t.TreatmentDate,
 					TreatmentDetail = t.TreatmentDetails,
-					DoctorFullName = t.Doctor != null ? $"{t.Doctor.FirstName} {t.Doctor.LastName}" : "Unknown",
+					PatientFullName = t.Patient != null ? $"{t.Patient.FirstName} {t.Patient.LastName}" : "Unknown",
 					FollowUpDate = t.FollowUpDate,
 					TreatmentTitle = t.Title
 				})
@@ -57,16 +57,16 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 				return Unauthorized();
 			}
 
-			var patient = await _context.Patients
+			var doctor = await _context.Doctors
 				.FirstOrDefaultAsync(p => p.ApplicationUser.Id == Guid.Parse(applicationUserId));
 
-			if (patient == null)
+			if (doctor == null)
 			{
 				return NotFound("Can not find your information.");
 			}
 
 			var treatment = await _context.Treatments
-				.Where(t => t.TreatmentID == treatmentId && t.PatientID == patient.PatientID)
+				.Where(t => t.TreatmentID == treatmentId && t.DoctorID == doctor.DoctorID)
 				.Include(t => t.Doctor)
 				.FirstOrDefaultAsync();
 
@@ -76,20 +76,19 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 			}
 
 			// Lưu patientId vào ViewData để có thể quay lại danh sách
-			ViewData["PatientId"] = patient.PatientID;
+			ViewData["DoctorId"] = doctor.DoctorID;
 
 			var treatmentDetail = new
 			{
 				TreatmentID = treatment.TreatmentID,
 				TreatmentDate = treatment.TreatmentDate,
 				TreatmentDetail = treatment.TreatmentDetails,
-				DoctorFullName = treatment.Doctor != null ? $"{treatment.Doctor.FirstName} {treatment.Doctor.LastName}" : "Unknown",
+				PatientFullName = treatment.Patient != null ? $"{treatment.Patient.FirstName} {treatment.Patient.LastName}" : "Unknown",
 				FollowUpDate = treatment.FollowUpDate,
 				TreatmentTitle = treatment.Title
 			};
 
 			return View(treatmentDetail);
 		}
-
 	}
 }

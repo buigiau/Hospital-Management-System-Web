@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Entites;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 {
@@ -7,9 +9,21 @@ namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 	[Authorize]
 	public class HomeController : Controller
 	{
-		public IActionResult Index()
+		private readonly ApplicationDbContext _context;
+
+		public HomeController(ApplicationDbContext context)
 		{
-			return View();
+			_context = context;
+		}
+		public async Task<IActionResult> Index(Guid id)
+		{
+			var doctor = await _context.Doctors.Include(d => d.Department)
+				.FirstOrDefaultAsync(p => p.ApplicationUser.Id == id);
+
+			if (doctor == null)
+				return NotFound();
+
+			return View(doctor);
 		}
 	}
 }

@@ -1,0 +1,27 @@
+﻿@foreach (var prescription in Model)
+{
+    <div class="container mt-4">
+        <div class="card">
+            <!-- Card Header with blue background and white text -->
+            <div class="card-header" style="background-color: #007BFF; color: white;">
+                <h5>@prescription.Title</h5>
+            </div>
+            <div class="card-body">
+                <!-- Medication Name with default text color -->
+                <p><strong class="text-dark">Medication Name:</strong> @prescription.MedicationName</p>
+                <!-- Dosage with default text color -->
+                <p><strong class="text-dark">Dosage:</strong> @prescription.Dosage</p>
+                <!-- Instruction in red text color -->
+                <p><strong class="text-danger">Instruction:</strong> @prescription.Instruction</p>
+                <!-- Treatment Date with default text color -->
+                <p><strong class="text-dark">Treatment Date:</strong> @prescription.TreatmentDate.ToString("dd/MM/yyyy")</p>
+                <!-- Doctor name with default text color -->
+                <p><strong class="text-dark">Doctor:</strong> @prescription.DoctorFullName</p>
+            </div>
+            <!-- Card footer to emphasize additional info -->
+            <div class="card-footer bg-light">
+                <small class="text-muted">This prescription is provided with care.</small>
+            </div>
+        </div>
+    </div>
+}
