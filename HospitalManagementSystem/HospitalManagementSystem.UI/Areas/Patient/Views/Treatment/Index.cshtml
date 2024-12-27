@@ -5,6 +5,7 @@
 <table class="table table-striped table-hover table-bordered" style="width: 95%; margin: 20px auto; background-color: #f8f9fa;">
     <thead class="table-dark text-center">
         <tr>
+            <th scope="col" class="text-warning" style="font-size: 18px;">Treatment Title</th>
             <th scope="col" class="text-warning" style="font-size: 18px;">Treatment Date</th>
             <th scope="col" class="text-warning" style="font-size: 18px;">Attending Doctor</th>
             <th scope="col" class="text-warning" style="font-size: 18px;">Follow-Up Date</th>
@@ -15,6 +16,8 @@
         @foreach (var treatment in Model)
         {
             <tr>
+                <td class="text-center" style="font-size: 16px; color: #ff8c00;">@treatment.TreatmentTitle</td>
+
                 <!-- Treatment Date Color Updated to Orange -->
                 <td class="text-center" style="font-size: 16px; color: #ff8c00;">@treatment.TreatmentDate.ToString("dd/MM/yyyy")</td>
 

@@ -17,6 +17,9 @@ namespace HospitalManagementSystem.Core.Domain.Entites
 
 		public Guid DoctorID { get; set; }
 
+		[StringLength(100)]
+		public string? Title { get; set; }
+
 		[StringLength(500)]
 		public string? TreatmentDetails { get; set; }
 

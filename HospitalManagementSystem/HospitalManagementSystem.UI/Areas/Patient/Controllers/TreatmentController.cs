@@ -32,7 +32,6 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 				return NotFound("Không tìm thấy thông tin bệnh nhân của bạn.");
 			}
 
-			// Lấy danh sách cuộc hẹn của bệnh nhân
 			var treatments = await _context.Treatments
 				.Where(t => t.PatientID == patient.PatientID)
 				.Include(t => t.Doctor)
@@ -42,7 +41,8 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 					TreatmentDate = t.TreatmentDate,
 					TreatmentDetail = t.TreatmentDetails,
 					DoctorFullName = t.Doctor != null ? $"{t.Doctor.FirstName} {t.Doctor.LastName}" : "Unknown",
-					FollowUpDate = t.FollowUpDate
+					FollowUpDate = t.FollowUpDate,
+					TreatmentTitle = t.Title
 				})
 				.ToListAsync();
 
@@ -84,7 +84,8 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 				TreatmentDate = treatment.TreatmentDate,
 				TreatmentDetail = treatment.TreatmentDetails,
 				DoctorFullName = treatment.Doctor != null ? $"{treatment.Doctor.FirstName} {treatment.Doctor.LastName}" : "Unknown",
-				FollowUpDate = treatment.FollowUpDate
+				FollowUpDate = treatment.FollowUpDate,
+				TreatmentTitle = treatment.Title
 			};
 
 			return View(treatmentDetail);

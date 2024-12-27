@@ -1,20 +1,23 @@
 ﻿@model dynamic
 
-<h2 class="text-center text-primary">Treatment Details</h2>
+<h2 class="text-center text-primary mt-4 mb-4" style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; color: #007bff;">Treatment Details</h2>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h4>Treatment Information</h4>
-            <p><strong>Treatment Date:</strong> @Model.TreatmentDate.ToString("dd/MM/yyyy")</p>
-            <p><strong>Doctor:</strong> @Model.DoctorFullName</p>
-            <p><strong>Treatment Details:</strong> @Model.TreatmentDetail</p>
-            <p><strong>Follow-Up Date:</strong> @Model.FollowUpDate?.ToString("dd/MM/yyyy")</p>
-        </div>
-        <div class="col-md-6">
-            <!-- You can add additional information or controls here if needed -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Treatment Information Section -->
+            <div class="card shadow-sm p-4 mb-4" style="background-color: #f8f9fa;">
+                <h4 class="text-success" style="font-size: 24px; font-weight: bold;">@Model.TreatmentTitle</h4>
+                <p><strong class="text-info">Treatment Date:</strong> <span class="text-dark">@Model.TreatmentDate.ToString("dd/MM/yyyy")</span></p>
+                <p><strong class="text-info">Doctor:</strong> <span class="text-dark">@Model.DoctorFullName</span></p>
+                <p><strong class="text-info">Treatment Details:</strong> <span class="text-dark">@Model.TreatmentDetail</span></p>
+                <p><strong class="text-info">Follow-Up Date:</strong> <span class="text-dark">@Model.FollowUpDate?.ToString("dd/MM/yyyy")</span></p>
+            </div>
+
+            <!-- Back to Treatment List button with Bootstrap styling -->
+            <div class="text-center">
+                <a href="@Url.Action("Index", new { patientId = ViewData["PatientId"] })" class="btn btn-outline-primary btn-lg mt-4" style="width: 200px;">Back to Treatment List</a>
+            </div>
         </div>
     </div>
 </div>
-
-<a href="@Url.Action("Index", new { patientId = ViewData["PatientId"] })" class="btn btn-primary">Back to Treatment List</a>
