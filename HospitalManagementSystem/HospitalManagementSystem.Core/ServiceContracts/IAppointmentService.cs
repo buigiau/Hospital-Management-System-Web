@@ -1,13 +1,15 @@
 ﻿using HospitalManagementSystem.Core.Domain.Entites;
+using HospitalManagementSystem.Core.Domain.RepositoryContracts;
+using HospitalManagementSystem.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystem.Core.Domain.RepositoryContracts
+namespace HospitalManagementSystem.Core.ServiceContracts
 {
-	public interface IAppointmentRepository
+	public interface IAppointmentService
 	{
 		Task CreateAppointmentAsync(Appointment appointment);
 		Task<Appointment?> GetAppointmentByIdAsync(Guid appointmentId);

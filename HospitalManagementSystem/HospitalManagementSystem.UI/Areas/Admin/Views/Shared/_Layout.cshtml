@@ -206,6 +206,68 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <!--Treatment-->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#treatmentsSubmenu" aria-expanded="false">
+                                <i class="fa-regular fa-file"></i>
+                                <span class="ms-2">Treatments</span>
+                            </a>
+                            <div id="treatmentsSubmenu" class="submenu collapse">
+                                <ul class="nav flex-column ms-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Treatment" asp-action="Index">
+                                            <i class="fa-solid fa-list"></i>
+                                            <span class="ms-2">Treatment List</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Treatment" asp-action="Create">
+                                            <i class="fa-solid fa-plus"></i>
+                                            <span class="ms-2">Add Treatment</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!--Prescription-->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#prescriptionsSubmenu" aria-expanded="false">
+                                <i class="fa-solid fa-pills"></i>
+                                <span class="ms-2">Prescriptions</span>
+                            </a>
+                            <div id="presciptionsSubmenu" class="submenu collapse">
+                                <ul class="nav flex-column ms-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Prescription" asp-action="Index">
+                                            <i class="fa-solid fa-list"></i>
+                                            <span class="ms-2">Prescription List</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        
+                        <!--Appointment-->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#appointmentsSubmenu" aria-expanded="false">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <span class="ms-2">Appointments</span>
+                            </a>
+                            <div id="appointmentsSubmenu" class="submenu collapse">
+                                <ul class="nav flex-column ms-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-controller="Appointment" asp-action="Index">
+                                            <i class="fa-solid fa-list"></i>
+                                            <span class="ms-2">Appointment List</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
                         <!-- Payments & Billing -->
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#paymentsSubmenu" aria-expanded="false">
