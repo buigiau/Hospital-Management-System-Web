@@ -1,4 +1,5 @@
 ﻿using Entites;
+using HospitalManagementSystem.Core.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +36,7 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 			var treatments = await _context.Treatments
 				.Where(t => t.PatientID == patient.PatientID)
 				.Include(t => t.Doctor)
-				.Select(t => new
+				.Select(t => new TreatmentDTO
 				{
 					TreatmentID = t.TreatmentID,
 					TreatmentDate = t.TreatmentDate,
@@ -78,7 +79,7 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 			// Lưu patientId vào ViewData để có thể quay lại danh sách
 			ViewData["PatientId"] = patient.PatientID;
 
-			var treatmentDetail = new
+			var treatmentDetail = new TreatmentDTO
 			{
 				TreatmentID = treatment.TreatmentID,
 				TreatmentDate = treatment.TreatmentDate,

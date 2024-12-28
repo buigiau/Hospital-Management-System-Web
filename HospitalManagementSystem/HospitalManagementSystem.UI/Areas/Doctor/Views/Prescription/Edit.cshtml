@@ -1,0 +1,125 @@
+﻿@model PrescriptionDTO
+
+<style>
+    /* Tổng quan về nội dung */
+    .content {
+        margin-left: 270px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        min-height: 100vh;
+        background-color: #f7f8fa; /* Nền sáng */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Tiêu đề */
+    h2 {
+        color: #333;
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    /* Form */
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+    .form-control {
+        padding: 12px 15px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fdfdfd;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .form-control::placeholder {
+            color: #888;
+        }
+
+    .form-group .text-danger {
+        position: absolute;
+        font-size: 13px;
+        color: #e74c3c;
+        top: 100%;
+        left: 10px;
+        margin-top: 5px;
+    }
+
+    /* Nút bấm */
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #ffffff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #ffffff;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+</style>
+
+<div class="content">
+    <h2>Edit Prescription</h2>
+
+    <form method="post" asp-action="EditConfirmed" asp-route-prescriptionID="@Model.PrescriptionID">
+        <input type="hidden" asp-for="PrescriptionID" />
+
+        <!-- Medication Name -->
+        <div class="form-group">
+            <label for="MedicationName">Medication Name</label>
+            <input type="text" id="MedicationName" name="MedicationName" class="form-control" value="@Model.MedicationName" required />
+        </div>
+
+        <!-- Dosage -->
+        <div class="form-group">
+            <label for="Dosage">Dosage</label>
+            <input type="text" id="Dosage" name="Dosage" class="form-control" value="@Model.Dosage" required />
+        </div>
+
+        <!-- Instruction -->
+        <div class="form-group">
+            <label for="Instruction">Instruction</label>
+            <textarea id="Instruction" name="Instruction" class="form-control" required>@Model.Instruction</textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+
+        <div class="form-group">
+            <a href="@Url.Action("Index", "Prescription")" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<dynamic>
+﻿@model IEnumerable<AppointmentDTO>
 
 <div class="container mt-5">
     <h1 class="text-center mb-4" style="color: #5c6bc0; font-family: 'Roboto', sans-serif;">Your Appointments</h1>
@@ -40,7 +40,7 @@
                                     <span class="badge" style="background-color: #dc3545; color: white;">Cancelled</span>
                                 }
                             </td>
-                            <td>@appointment.DoctorFullName</td>
+                            <td class="text-center">@appointment.DoctorFullName</td>
                             <td class="text-center">@appointment.RoomNumber</td>
                         </tr>
                     }

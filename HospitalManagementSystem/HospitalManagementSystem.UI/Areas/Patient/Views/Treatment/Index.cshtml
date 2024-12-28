@@ -1,4 +1,4 @@
-﻿@model IEnumerable<dynamic>
+﻿@model IEnumerable<TreatmentDTO>
 
 <h2 class="mt-4 text-center" style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; color: #4169E1;">Treatment List</h2>
 
@@ -18,7 +18,7 @@
             <tr>
                 <td class="text-center" style="font-size: 18px; color: #1E90FF; font-weight: 500; padding: 15px;">@treatment.TreatmentTitle</td>
 
-                <td class="text-center" style="font-size: 18px; color: black; font-weight: 500; padding: 15px;">@treatment.TreatmentDate.ToString("dd/MM/yyyy")</td>
+                <td class="text-center" style="font-size: 18px; color: black; font-weight: 500; padding: 15px;">@treatment.TreatmentDate.Value.ToString("dd/MM/yyyy")</td>
 
                 <td class="text-center" style="font-size: 18px; color: #1E90FF; font-weight: 500; padding: 15px;">@treatment.DoctorFullName</td>
 

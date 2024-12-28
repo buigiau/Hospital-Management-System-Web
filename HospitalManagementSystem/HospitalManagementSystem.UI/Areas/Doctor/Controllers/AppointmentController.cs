@@ -1,4 +1,5 @@
 ﻿using Entites;
+using HospitalManagementSystem.Core.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,7 @@ namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 				.Where(a => a.DoctorID == doctor.DoctorID)
 				.Include(a => a.Patient)
 				.Include(a => a.Room)
-				.Select(a => new
+				.Select(a => new AppointmentDTO
 				{
 					AppointmentID = a.AppointmentID,
 					AppointmentDate = a.AppointmentDate,
