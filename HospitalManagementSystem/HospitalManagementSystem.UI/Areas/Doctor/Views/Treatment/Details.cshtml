@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model TreatmentDTO
 <style>
 	.content {
 		margin-left: 270px;
@@ -19,10 +19,10 @@
 				<div class="card shadow-sm p-5 mb-4" style="background-color: #f8f9fa; border-radius: 10px;">
 					<h4 class="text-success" style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">@Model.TreatmentTitle</h4>
 					<p style="font-size: 20px; line-height: 1.8;">
-						<strong class="text-info">Treatment Date:</strong> <span class="text-dark">@Model.TreatmentDate.ToString("dd/MM/yyyy")</span>
+						<strong class="text-info">Treatment Date:</strong> <span class="text-dark">@Model.TreatmentDate.Value.ToString("dd/MM/yyyy")</span>
 					</p>
 					<p style="font-size: 20px; line-height: 1.8;">
-						<strong class="text-info">Doctor:</strong> <span class="text-dark">@Model.PatientFullName</span>
+						<strong class="text-info">Patient:</strong> <span class="text-dark">@Model.PatientFullName</span>
 					</p>
 					<p style="font-size: 20px; line-height: 1.8;">
 						<strong class="text-info">Treatment Details:</strong> <span class="text-dark">@Model.TreatmentDetail</span>

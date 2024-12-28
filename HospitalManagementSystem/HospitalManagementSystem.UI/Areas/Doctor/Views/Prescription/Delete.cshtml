@@ -1,0 +1,46 @@
+﻿@model PrescriptionDTO
+
+@{
+    ViewData["Title"] = "Delete Prescription";
+}
+<style>
+    .content {
+        margin-left: 270px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+    }
+</style>
+<div class="content">
+<h1>Are you sure you want to delete this prescription?</h1>
+
+<div>
+    <h3>Prescription Details</h3>
+    <dl class="row">
+        <dt class="col-sm-2">Medication Name</dt>
+        <dd class="col-sm-10">@Model.MedicationName</dd>
+
+        <dt class="col-sm-2">Dosage</dt>
+        <dd class="col-sm-10">@Model.Dosage</dd>
+
+        <dt class="col-sm-2">Instruction</dt>
+        <dd class="col-sm-10">@Model.Instruction</dd>
+
+        <dt class="col-sm-2">Treatment Date</dt>
+        <dd class="col-sm-10">@Model.TreatmentDate.Value.ToString("yyyy-MM-dd")</dd>
+
+        <dt class="col-sm-2">Patient</dt>
+        <dd class="col-sm-10">@Model.PatientFullName</dd>
+
+        <dt class="col-sm-2">Treatment Title</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+    </dl>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post" asp-route-prescriptionId="@Model.PrescriptionID">
+    <input type="hidden" name="id" value="@Model.PrescriptionID" />
+    <button type="submit" class="btn btn-danger">Yes, delete this prescription</button>
+    <a href="@Url.Action("Index", "Prescription")" class="btn btn-secondary">Cancel</a>
+</form>
+</div>

@@ -22,7 +22,7 @@ namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 
 			if (doctor == null)
 				return NotFound();
-
+			ViewBag.DoctorId = doctor.Id;
 			return View(doctor);
 		}
 	}
