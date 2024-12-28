@@ -68,13 +68,27 @@
 					<h5>@doctor.FirstName @doctor.LastName</h5>
 					<p>@doctor.PhoneNumber</p>
 					<p>@doctor.Email</p>
+					@if(doctor.Availability=="Free"){
+						<p class="text-success"><strong>@doctor.Availability</strong></p>
+					}
+					else
+					{
+						<p class="text-danger"><strong>@doctor.Availability</strong></p>
+					}
 					<strong>@doctor.Department</strong>
 					<div class="social-icons">
 						<a href="#"><i class="fa-brands fa-facebook"></i></a>
 						<a href="#"><i class="fa-brands fa-twitter"></i></a>
 						<a href="#"><i class="fa-brands fa-instagram"></i></a>
 					</div>
-					<a href="@Url.Action("Details", "Doctor", new { id = doctor.DoctorID })" class="btn mt-3">Book Appointment</a>
+					@if (doctor.Availability == "Free")
+					{
+						<a href="@Url.Action("BookAppointment", "Doctor", new { id = doctor.DoctorID })" class="btn mt-3">Book Appointment</a>
+					}
+					else
+					{
+						<button class="btn mt-3 disable" disabled>No Action</button>
+					}
 				</div>
 			</div>
 		}

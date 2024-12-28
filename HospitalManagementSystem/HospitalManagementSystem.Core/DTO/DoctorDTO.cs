@@ -36,6 +36,6 @@ namespace HospitalManagementSystem.Core.DTO
 
 		public string? Department { get; set; }
 
-		public string? Available { get; set; }
+		public string? Availability { get; set; }
 	}
 }
