@@ -1,0 +1,78 @@
+﻿@model TreatmentDTO
+
+@{
+	ViewData["Title"] = "Add Treatment";
+}
+<style>
+	.content {
+		margin-left: 270px;
+		padding: 30px;
+		transition: all 0.3s ease;
+		min-height: 100vh;
+		font-family: 'Arial', sans-serif;
+	}
+</style>
+<div class="content">
+	<h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+	@if (TempData["SuccessMessage"] != null)
+	{
+		<div class="alert alert-success text-center">
+			@TempData["SuccessMessage"]
+		</div>
+	}
+
+	<div class="container">
+		<form asp-action="SubmitAppointment" method="post">
+			<div class="card shadow-lg">
+				<div class="card-body">
+					<div class="form-group">
+						<label for="PatientFullName">Patient</label>
+						<input type="text" class="form-control" id="PatientFullName" name="PatientFullName" value="@Model.PatientFullName" readonly />
+					</div>
+
+					<div class="form-group">
+						<label for="TreatmentTitle">Treatment Title</label>
+						<textarea class="form-control" id="TreatmentTitle" name="TreatmentTitle" rows="4">@Model.TreatmentTitle</textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="TreatmentDate">Treatment Date</label>
+						<input type="datetime-local"
+							   class="form-control"
+							   id="TreatmentDate"
+							   name="TreatmentDate"
+							   value="@Model.TreatmentDate?.ToString("yyyy-MM-ddTHH:mm") ?? " ""
+							   required />
+					</div>
+
+					<div class="form-group">
+						<label for="FollowUpDate">Follow Up Date</label>
+						<input type="datetime-local"
+							   class="form-control"
+							   id="FollowUpDate"
+							   name="FollowUpDate"
+							   value="@Model.FollowUpDate?.ToString("yyyy-MM-ddTHH:mm") ?? " ""
+							   required />
+					</div>
+
+					<div class="form-group">
+						<label for="TreatmentDetail">Treatment Detail</label>
+						<textarea class="form-control" id="TreatmentDetail" name="TreatmentDetail" rows="4">@Model.TreatmentDetail</textarea>
+					</div>
+
+					<input type="hidden" name="DoctorID" value="@Model.DoctorID">
+					<input type="hidden" name="PatientID" value="@Model.PatientID" />
+
+					<div class="text-center mt-3">
+						<button type="submit" class="btn btn-success btn-lg">Add Treatment</button>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<div class="mt-4 text-center">
+			<a href="@Url.Action("Index", "Patient")" class="btn btn-link">Back to Home</a>
+		</div>
+	</div>
+</div>

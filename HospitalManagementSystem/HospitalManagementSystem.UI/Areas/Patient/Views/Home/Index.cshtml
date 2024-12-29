@@ -165,30 +165,13 @@
     <!-- Doctor Appointments Section -->
     <div class="chart-card mt-4">
         <h6>Doctor Appointments</h6>
-        <div class="appointment-card">
-            <span>Dentist</span>
-            <span>Dr. Gorex Methew</span>
-            <span>9:00 AM</span>
-        </div>
-        <div class="appointment-card">
-            <span>Cardiologist</span>
-            <span>Dr. Craig Gemx</span>
-            <span>12:00 PM</span>
-        </div>
-        <div class="appointment-card">
-            <span>Orthopedist</span>
-            <span>Dr. Bruce Williams</span>
-            <span>3:00 PM</span>
-        </div>
-        <div class="appointment-card">
-            <span>Physician</span>
-            <span>Dr. Kiera Knight</span>
-            <span>4:00 PM</span>
-        </div>
-        <div class="appointment-card">
-            <span>Endocrinologist</span>
-            <span>Dr. Anni Roy</span>
-            <span>6:00 PM</span>
-        </div>
+        @foreach (var appointment in Model.Appointments)
+        {
+            <div class="appointment-card">
+                <span>@appointment.Doctor.Department.Name</span>
+                <span>Dr. @appointment.Doctor.FirstName @appointment.Doctor.LastName</span>
+                <span>@appointment.AppointmentDate</span>
+            </div>
+        }
     </div>
 </div>

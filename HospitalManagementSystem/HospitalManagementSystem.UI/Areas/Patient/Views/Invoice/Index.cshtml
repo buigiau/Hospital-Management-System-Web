@@ -1,0 +1,58 @@
+﻿@model IEnumerable<InvoiceDTO>
+
+@{
+    ViewData["Title"] = "Invoice List";
+}
+
+<h1 class="text-center my-4">Invoice List</h1>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info text-center" role="alert">
+        No invoices found for this patient.
+    </div>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th class="text-center">Treatment Title</th>
+                <th class="text-center">Invoice Date</th>
+                <th class="text-center">Amount</th>
+                <th class="text-center">Payment Status</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var invoice in Model)
+            {
+                <tr>
+                    <td class="text-center">@invoice.TreatmentTitle</td>
+                    <td class="text-center">@invoice.InvoiceDate.Value.ToString("dd/MM/yyyy")</td>
+                    <td class="text-center">@invoice.Amount.ToString("C")</td>
+                    <td class="text-center">
+                        <span class="badge @(invoice.PaymentStatus == "Unpaid" ? "badge-danger text-danger" : "badge-success text-success")">
+                            @invoice.PaymentStatus
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        @if (invoice.PaymentStatus == "Unpaid")
+                        {
+                            <form asp-action="PayInvoice" asp-controller="Invoice" method="post">
+                                <input type="hidden" name="invoiceId" value="@invoice.InvoiceID" />
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    Pay Now
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <span>-</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -277,7 +277,7 @@
                             <div id="paymentsSubmenu" class="submenu collapse">
                                 <ul class="nav flex-column ms-3">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" asp-controller="Invoice" asp-action="Index">
                                             <i class="fa-solid fa-list"></i>
                                             <span class="ms-2">Payment List</span>
                                         </a>
@@ -285,6 +285,15 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <!--Register-->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span class="ms-2">Register New Account</span>
+                            </a>
+                        </li>
+
                         <!-- Settings and Logout -->
                         <li class="nav-item border-top mt-3">
                             <a class="nav-link" href="#">

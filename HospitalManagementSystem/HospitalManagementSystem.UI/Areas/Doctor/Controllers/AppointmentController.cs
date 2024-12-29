@@ -50,7 +50,7 @@ namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 					DoctorID = a.DoctorID,
 				})
 				.ToListAsync();
-
+				ViewBag.DoctorId = doctor.Id;
 			// Return the appointments to the view
 			return View(appointments);
 		}

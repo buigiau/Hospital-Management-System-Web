@@ -13,9 +13,9 @@ namespace HospitalManagementSystem.Core.DTO
 		public DateTime? TreatmentDate { get; set; } = DateTime.Now;
 		public string TreatmentDetail { get; set;}
 
-		public string PatientFullName { get; set;}
+		public string? PatientFullName { get; set;}
 
-		public string DoctorFullName { get; set; }
+		public string? DoctorFullName { get; set; }
 
 		public string TreatmentTitle { get; set;}
 

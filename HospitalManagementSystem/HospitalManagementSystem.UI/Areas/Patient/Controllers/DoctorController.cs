@@ -66,7 +66,6 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 				DoctorName = $"{doctor.FirstName} {doctor.LastName}",
 				PatientID = patient.PatientID // Lấy PatientID của bệnh nhân
 			};
-
 			return View(model);
 		}
 

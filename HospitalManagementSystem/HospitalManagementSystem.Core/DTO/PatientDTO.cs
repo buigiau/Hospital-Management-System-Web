@@ -34,10 +34,13 @@ namespace HospitalManagementSystem.Core.DTO
 		[Required(ErrorMessage = "Address can not be blank!")]
 		public string? Address { get; set; }
 
+		[Required(ErrorMessage = "Height can not be blank!")]
 		public float? Height { get; set; }
 
+		[Required(ErrorMessage = "Weight can not be blank!")]
 		public float? Weight { get; set; }
 
+		[Required(ErrorMessage = "Blood Group can not be blank!")]
 		public string? BloodGroup { get; set; }
 	}
 }

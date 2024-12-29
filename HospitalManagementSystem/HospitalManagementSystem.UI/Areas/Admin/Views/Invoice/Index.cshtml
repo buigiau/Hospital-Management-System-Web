@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Invoice>
+
+@{
+    ViewData["Title"] = "Billings";
+}
+
+<h1 class="mb-4 text-center">@ViewData["Title"]</h1>
+
+<!-- Table hiển thị danh sách hóa đơn -->
+<table class="table table-bordered table-hover text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th> <!-- Cột số thứ tự -->
+            <th>Treatment Title</th>
+            <th>Amount ($)</th>
+            <th>Invoice Date</th>
+            <th>Payment Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (invoice, index) in Model.Select((value, i) => (value, i)))
+        {
+            <tr>
+                <td>@(index + 1)</td> <!-- Số thứ tự -->
+                <td>@invoice.Treatment.Title</td>
+                <td>@string.Format("{0:N2}", invoice.Amount)</td>
+                <td>@invoice.InvoiceDate</td>
+                <td>
+                    @if (invoice.PaymentStatus == "Paid")
+                    {
+                        <span class="text-success font-weight-bold">✔</span> <!-- Dấu tích -->
+                    }
+                    else
+                    {
+                        <span class="text-danger font-weight-bold">✘</span> <!-- Dấu x -->
+                    }
+                </td>
+                <td>
+                    <!-- Nút Edit -->
+                    <a href="@Url.Action("Edit", new { id = invoice.InvoiceID })" class="btn btn-sm btn-primary">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+
+                    <!-- Nút Delete -->
+                    <a href="@Url.Action("Delete", new { id = invoice.InvoiceID })" class="btn btn-sm btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- CSS Styles -->
+<style>
+    .table {
+        background-color: #f9f9f9;
+        border: 1px solid #dee2e6;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .thead-dark th {
+        background-color: #343a40;
+        color: #ffffff;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+</style>
