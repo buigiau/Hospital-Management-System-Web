@@ -30,7 +30,7 @@
             <p><strong>Gender: </strong>@(patient.Gender == 0 ? "Male" : "Female")</p>
             <p><strong>Phone Number: </strong>@patient.PhoneNumber</p>
 
-            <a href="@Url.Action("Details", "Patient", new { id = patient.PatientID })" class="btn btn-primary">Add Treatment</a>
+            <a href="@Url.Action("AddTreatment", "Treatment", new { id = patient.PatientID })" class="btn btn-primary">Add Treatment</a>
         </div>
 
         <div class="patient-image-container">

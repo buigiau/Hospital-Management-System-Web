@@ -3,7 +3,7 @@
 <div class="container mt-5">
     <h2 class="mb-4 text-center">Edit Patient</h2>
     <form method="post" asp-action="Edit" enctype="multipart/form-data">
-        <input type="hidden" asp-for="PatientID"/>
+        <input type="hidden" asp-for="PatientID" name="@Model.PatientID" value="@Model.PatientID"/>
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName" class="form-label">First Name</label>
@@ -100,3 +100,4 @@
             box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
         }
 </style>
+

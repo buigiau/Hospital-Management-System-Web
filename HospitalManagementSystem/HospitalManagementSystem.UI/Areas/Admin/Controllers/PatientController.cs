@@ -135,7 +135,10 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 				DateOfBirth = patientEntity.DateOfBirth,
 				Gender = patientEntity.Gender,
 				PhoneNumber = patientEntity.PhoneNumber,
-				Address = patientEntity.Address
+				Address = patientEntity.Address,
+				Height = patientEntity.Height,
+				Weight = patientEntity.Weight,
+				BloodGroup = patientEntity.BloodGroup,
 			};
 
 			return View(patientDTO);

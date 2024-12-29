@@ -1,4 +1,5 @@
 ﻿using Entites;
+using HospitalManagementSystem.Core.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +35,7 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 
 			var prescriptions = await _context.Prescriptions
 				.Where(p => p.Treatment.PatientID == patient.PatientID)
-				.Select(p => new
+				.Select(p => new 
 				{
 					PrescriptionID = p.PresciptionID,
 					MedicationName = p.MedicationName,

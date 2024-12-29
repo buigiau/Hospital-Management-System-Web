@@ -1,9 +1,11 @@
 ﻿using Entites;
 using HospitalManagementSystem.Core.Domain.Entites;
 using HospitalManagementSystem.Core.DTO;
+using HospitalManagementSystem.Core.ServiceContracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 {
@@ -12,9 +14,12 @@ namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 	public class TreatmentController : Controller
 	{
 		private readonly ApplicationDbContext _context;
-		public TreatmentController(ApplicationDbContext context)
+		private readonly IPatientService _patientService;
+
+		public TreatmentController(ApplicationDbContext context, IPatientService patientService)
 		{
 			_context = context;
+			_patientService = patientService;
 		}
 		public async Task<IActionResult> Index(Guid doctorId)
 		{
@@ -203,6 +208,63 @@ namespace HospitalManagementSystem.UI.Areas.Doctor.Controllers
 			await _context.SaveChangesAsync();
 
 			return RedirectToAction(nameof(Index));
+		}
+		public async Task<IActionResult> AddTreatment(Guid id)
+		{
+			// Lấy thông tin bệnh nhân
+			var patient = await _patientService.GetByIdAsync(id);
+
+			if (patient == null)
+				return NotFound("Patient not found.");
+
+			// Lấy thông tin người dùng đăng nhập
+			var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+			if (userIdClaim == null || string.IsNullOrEmpty(userIdClaim.Value))
+				return Unauthorized();
+
+			if (!Guid.TryParse(userIdClaim.Value, out Guid userId))
+				return BadRequest("Invalid User ID.");
+
+			// Tìm bác sĩ dựa trên Account ID
+			var doctor = await _context.Doctors.FirstOrDefaultAsync(d => d.Id == userId);
+			if (doctor == null)
+				return NotFound("Doctor not found.");
+
+			// Chuẩn bị dữ liệu cho view
+			var model = new TreatmentDTO
+			{
+				PatientID = id,
+				PatientFullName = $"{patient.FirstName ?? ""} {patient.LastName ?? ""}".Trim(),
+				DoctorID = doctor.DoctorID, // Bảo vệ giá trị nullable
+				TreatmentDate = DateTime.Now, // Gợi ý ngày điều trị mặc định
+				FollowUpDate = DateTime.Now.AddDays(7) // Gợi ý ngày tái khám mặc định
+			};
+
+			return View(model);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> SubmitAppointment(TreatmentDTO model)
+		{
+			if (!ModelState.IsValid)
+				return View("AddTreatment", model);
+
+			// Lưu thông tin điều trị
+			var treatment = new Treatment
+			{
+				PatientID = model.PatientID,
+				DoctorID = model.DoctorID,
+				Title = model.TreatmentTitle,
+				TreatmentDate = model.TreatmentDate ?? DateTime.Now, // Đảm bảo giá trị mặc định
+				FollowUpDate = model.FollowUpDate,
+				TreatmentDetails = model.TreatmentDetail
+			};
+
+			_context.Treatments.Add(treatment);
+			await _context.SaveChangesAsync();
+
+			TempData["SuccessMessage"] = "Treatment added successfully!";
+			return RedirectToAction("Index", "Patient");
 		}
 	}
 }

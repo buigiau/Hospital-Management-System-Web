@@ -1,6 +1,5 @@
 ﻿@model Doctor
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <style>
     /* Tổng quan về nội dung */
     .content {
@@ -118,7 +117,6 @@
         font-weight: 600;
         margin-bottom: 20px;
     }
-
 </style>
 
 <!-- Main Content -->
@@ -153,35 +151,30 @@
 
     <div class="row mt-4">
         <div class="col-12">
-            <div class="section-header-black">Patient Information</div>
+            <div class="section-header-black">Your Patient Information</div>
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Weight</th>
-                        <th>Disease</th>
-                        <th>Date</th>
-                        <th>Status</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Gender</th>
+                        <th class="text-center">Weight</th>
+                        <th class="text-center">Height</th>
+                        <th class="text-center">Blood Group</th>
+                        <th class="text-center">Contact</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Arthur Sandoval</td>
-                        <td>Male</td>
-                        <td>75 kg</td>
-                        <td>Cardiology</td>
-                        <td>15 Oct</td>
-                        <td>Complete</td>
-                    </tr>
-                    <tr>
-                        <td>Joseph Stephens</td>
-                        <td>Male</td>
-                        <td>81 kg</td>
-                        <td>Diabetes</td>
-                        <td>12 Oct</td>
-                        <td>Complete</td>
-                    </tr>
+                    @foreach (var patient in ViewBag.Patients)
+                    {
+                        <tr>
+                            <td class="text-center">@patient.FirstName @patient.LastName</td>
+                            <td class="text-center">@patient.Gender</td>
+                            <td class="text-center">@patient.Weight</td>
+                            <td class="text-center">@patient.Height</td>
+                            <td class="text-center">@patient.BloodGroup</td>
+                            <td class="text-center">@patient.PhoneNumber</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
@@ -189,17 +182,17 @@
 </div>
 
 <script>
-    // Dữ liệu tự chế cho chart
-        var ctx = document.getElementById('appointmentsChart').getContext('2d');
+    // Dữ liệu cho chart appointments trong tuần
+    var ctx = document.getElementById('appointmentsChart').getContext('2d');
     var appointmentsChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // Ngày trong tuần
             datasets: [{
                 label: '# of Appointments',
-                data: [3, 5, 2, 4, 6, 7, 3], // Số lượng appointment giả định trong tuần
-                backgroundColor: 'rgba(0, 0, 0, 0.8)', // Màu nền cột đen
-                borderColor: 'rgba(0, 0, 0, 1)', // Màu viền cột đen
+                data: @Html.Raw(Json.Serialize(ViewBag.AppointmentCounts)), // Dữ liệu appointments từ Controller
+                backgroundColor: 'rgba(255, 255, 255, 0.8)', // Màu nền cột trắng
+                borderColor: 'rgba(255, 255, 255, 1)', // Màu viền cột trắng
                 borderWidth: 1
             }]
         },
@@ -207,19 +200,19 @@
             plugins: {
                 legend: {
                     labels: {
-                        color: 'white' // Màu chữ của chú thích
+                        color: 'black' // Màu chữ của chú thích
                     }
                 }
             },
             scales: {
                 x: {
                     ticks: {
-                        color: 'white' // Màu chữ của trục X
+                        color: 'black' // Màu chữ của trục X
                     }
                 },
                 y: {
                     ticks: {
-                        color: 'white' // Màu chữ của trục Y
+                        color: 'black' // Màu chữ của trục Y
                     }
                 }
             }

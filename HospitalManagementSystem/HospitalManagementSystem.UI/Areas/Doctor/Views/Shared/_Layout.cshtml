@@ -86,7 +86,7 @@
 		<div class="sidebar">
 			<h4>Hospital System</h4>
 			<nav>
-				<a href="#" class="menu-item"><i class="fas fa-home"></i>Dashboard</a>
+				<a href="@Url.Action("Index", "Home", new { area = "Doctor", id = ViewBag.DoctorId })" class="menu-item"><i class="fas fa-home"></i>Dashboard</a>
 				<a asp-controller="Appointment" asp-action="Index" class="menu-item"><i class="fas fa-calendar-alt"></i>Appointments</a>
 				<a asp-controller="Patient" asp-action="Index" class="menu-item"><i class="fas fa-user"></i>Patients</a>
 				<a asp-controller="Treatment" asp-action="Index" class="menu-item"><i class="fas fa-credit-card"></i>Treatments</a>
