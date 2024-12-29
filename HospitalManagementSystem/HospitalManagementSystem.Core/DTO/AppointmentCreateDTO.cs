@@ -17,7 +17,7 @@ namespace HospitalManagementSystem.Core.DTO
 
 		[Required]
 		[DataType(DataType.DateTime)]
-		public DateTime AppointmentDate { get; set; }
+		public DateTime AppointmentDate { get; set; } = DateTime.Now;
 
 		[StringLength(200)]
 		public string? Notes { get; set; }

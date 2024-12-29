@@ -19,7 +19,7 @@ namespace HospitalManagementSystem.UI.Areas.Patients.Controllers
 		}
 		public async Task<IActionResult> Index(Guid id)
 		{
-			var patient = await _context.Patients
+			var patient = await _context.Patients.Include(p => p.Appointments)
 				.FirstOrDefaultAsync(p => p.ApplicationUser.Id == id);
 
 			if (patient == null)

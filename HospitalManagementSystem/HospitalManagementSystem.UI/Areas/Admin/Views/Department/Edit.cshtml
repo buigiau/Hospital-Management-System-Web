@@ -8,6 +8,7 @@
 
 <!-- Form Start -->
 <form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="DepartmentID" />
     @Html.AntiForgeryToken()
 
     <div class="form-group">
