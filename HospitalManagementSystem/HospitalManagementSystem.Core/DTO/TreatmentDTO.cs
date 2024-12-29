@@ -10,7 +10,7 @@ namespace HospitalManagementSystem.Core.DTO
 	public class TreatmentDTO
 	{
 		public Guid TreatmentID { get; set; }
-		public DateTime? TreatmentDate { get; set; }
+		public DateTime? TreatmentDate { get; set; } = DateTime.Now;
 		public string TreatmentDetail { get; set;}
 
 		public string PatientFullName { get; set;}
@@ -20,5 +20,9 @@ namespace HospitalManagementSystem.Core.DTO
 		public string TreatmentTitle { get; set;}
 
 		public DateTime? FollowUpDate { get; set; }
+
+		public Guid DoctorID { get; set; }
+
+		public Guid PatientID { get; set; }
 	}
 }
