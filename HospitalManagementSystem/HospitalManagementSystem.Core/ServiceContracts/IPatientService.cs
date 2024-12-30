@@ -13,7 +13,7 @@ namespace HospitalManagementSystem.Core.ServiceContracts
 		Task<IEnumerable<Patient>> GetAllAsync();
 		Task<Patient> GetByIdAsync(Guid id);
 		Task AddAsync(PatientDTO patientDto);
-		Task<PatientDTO> UpdatePatient(PatientDTO? patientDTO);
+		Task UpdatePatient(PatientDTO? patientDTO);
 		Task DeleteAsync(Guid id);
 
 	}

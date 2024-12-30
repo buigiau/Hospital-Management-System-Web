@@ -145,24 +145,32 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 		}
 
 		[HttpPost]
-		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Edit(PatientDTO patientDTO)
 		{
-			if (!ModelState.IsValid)
+			if (ModelState.IsValid)
 			{
-				return View(patientDTO);
+				try
+				{
+					// Cập nhật thông tin bệnh nhân
+					await _patientService.UpdatePatient(patientDTO);
+
+					// Chuyển hướng đến trang chi tiết hoặc danh sách
+					return RedirectToAction("ListToEdit"); // Hoặc trang chi tiết của bệnh nhân
+				}
+				catch (ArgumentException ex)
+				{
+					// Xử lý lỗi khi không tìm thấy bệnh nhân
+					ModelState.AddModelError(string.Empty, ex.Message);
+				}
+				catch (Exception ex)
+				{
+					// Xử lý lỗi chung
+					ModelState.AddModelError(string.Empty, "Có lỗi xảy ra khi cập nhật bệnh nhân.");
+				}
 			}
 
-			try
-			{
-				var updatedPatient = await _patientService.UpdatePatient(patientDTO);
-				return RedirectToAction("Details", new { id = updatedPatient.PatientID });
-			}
-			catch (Exception ex)
-			{
-				ModelState.AddModelError("", $"An error occurred: {ex.Message}");
-				return View(patientDTO);
-			}
+			// Nếu có lỗi hoặc model không hợp lệ, hiển thị lại form
+			return View(patientDTO);
 		}
 
 

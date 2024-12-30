@@ -39,47 +39,28 @@ namespace HospitalManagementSystem.Core.Services
 			await _repository.AddAsync(patient);
 		}
 
-		public async Task<PatientDTO> UpdatePatient(PatientDTO? patientDTO)
+		public async Task UpdatePatient(PatientDTO patientDTO)
 		{
 			if (patientDTO == null)
 				throw new ArgumentNullException(nameof(patientDTO));
 
-			// Validation
-			ValidationHelper.ModelValidation(patientDTO);
-
-			// Get matching patient object to update
-			Patient? matchingPatient = await _repository.GetByIdAsync(patientDTO.PatientID);
-			if (matchingPatient == null)
+			var patient = new Patient
 			{
-				throw new ArgumentException("Given patient id doesn't exist");
-			}
-
-			// Update all details
-			matchingPatient.PatientID = patientDTO.PatientID;
-			matchingPatient.FirstName = patientDTO.FirstName;
-			matchingPatient.LastName = patientDTO.LastName;
-			matchingPatient.Gender = patientDTO.Gender;
-			matchingPatient.Email = patientDTO.Email;
-			matchingPatient.DateOfBirth = patientDTO.DateOfBirth;
-			matchingPatient.PhoneNumber = patientDTO.PhoneNumber;
-			matchingPatient.Address = patientDTO.Address;
-
-			await _repository.UpdatePatient(matchingPatient);
-
-			// Convert back to DTO and return
-			var updatedPatientDTO = new PatientDTO
-			{
-				PatientID = matchingPatient.PatientID,
-				FirstName = matchingPatient.FirstName,
-				LastName = matchingPatient.LastName,
-				Gender = matchingPatient.Gender,
-				Email = matchingPatient.Email,
-				DateOfBirth = matchingPatient.DateOfBirth,
-				PhoneNumber = matchingPatient.PhoneNumber,
-				Address = matchingPatient.Address
+				PatientID = patientDTO.PatientID,
+				FirstName = patientDTO.FirstName,
+				LastName = patientDTO.LastName,
+				Gender = patientDTO.Gender,
+				Email = patientDTO.Email,
+				DateOfBirth = patientDTO.DateOfBirth,
+				PhoneNumber = patientDTO.PhoneNumber,
+				Address = patientDTO.Address,
+				Height = patientDTO.Height,
+				Weight = patientDTO.Weight,
+				BloodGroup = patientDTO.BloodGroup,
 			};
 
-			return updatedPatientDTO;
+			// Cập nhật bệnh nhân
+			await _repository.UpdatePatient(patient);
 		}
 
 

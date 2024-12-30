@@ -50,13 +50,45 @@ namespace HospitalManagementSystem.Core.Services
 
 		public async Task AddDoctorAsync(DoctorDTO doctorDto)
 		{
-			var doctor = _mapper.Map<Doctor>(doctorDto);
+			/*var doctor = _mapper.Map<Doctor>(doctorDto);*/
+			var doctor = new Doctor
+			{
+				DoctorID = new Guid(),
+				FirstName = doctorDto.FirstName,
+				LastName = doctorDto.LastName,
+				DateOfBirth = doctorDto.DateOfBirth,
+				Email = doctorDto.Email,
+				PhoneNumber = doctorDto.PhoneNumber,
+				Address = doctorDto.Address,
+				Availability = doctorDto.Availability,
+				Gender = doctorDto.Gender,
+			};
 			await _doctorRepository.AddDoctorAsync(doctor);
 		}
 
-		public async Task UpdateDoctorAsync(DoctorDTO doctorDto)
+		/*public async Task UpdateDoctorAsync(DoctorDTO doctorDto)
 		{
 			var doctor = _mapper.Map<Doctor>(doctorDto);
+			await _doctorRepository.UpdateDoctorAsync(doctor);
+		}*/
+		public async Task UpdateDoctorAsync(DoctorDTO doctorDTO)
+		{
+			if (doctorDTO == null)
+				throw new ArgumentNullException(nameof(doctorDTO));
+
+			var doctor = new Doctor
+			{
+				DoctorID = doctorDTO.DoctorID,
+				FirstName = doctorDTO.FirstName,
+				LastName = doctorDTO.LastName,
+				Gender = doctorDTO.Gender,
+				Email = doctorDTO.Email,
+				DateOfBirth = doctorDTO.DateOfBirth,
+				PhoneNumber = doctorDTO.PhoneNumber,
+				Address = doctorDTO.Address
+			};
+
+			// Cập nhật bệnh nhân
 			await _doctorRepository.UpdateDoctorAsync(doctor);
 		}
 
