@@ -36,25 +36,10 @@ namespace HospitalManagementSystem.Infrastucture.Repositories
 			await _context.SaveChangesAsync();
 		}
 
-		public async Task<Patient> UpdatePatient(Patient patient)
+		public async Task UpdatePatient(Patient patient)
 		{
-			Patient? matchingPatient = await _context.Patients.FirstOrDefaultAsync(temp => temp.PatientID == patient.PatientID);
-
-			if (matchingPatient == null)
-				return patient;
-
-			matchingPatient.PatientID = patient.PatientID;
-			matchingPatient.FirstName = patient.FirstName;
-			matchingPatient.LastName = patient.LastName;
-			matchingPatient.Email = patient.Email;
-			matchingPatient.DateOfBirth = patient.DateOfBirth;
-			matchingPatient.Gender = patient.Gender;
-			matchingPatient.PhoneNumber = patient.PhoneNumber;
-			matchingPatient.Address = patient.Address;
-
-			int countUpdated = await _context.SaveChangesAsync();
-
-			return matchingPatient;
+			_context.Patients.Update(patient);
+			await _context.SaveChangesAsync();
 		}
 
 		public async Task DeleteAsync(Guid id)
