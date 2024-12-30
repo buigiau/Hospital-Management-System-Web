@@ -152,5 +152,65 @@ namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 
 			return RedirectToAction("Index");
 		}
+		[HttpGet]
+		public async Task<IActionResult> Delete(Guid id)
+		{
+			if (id == Guid.Empty)
+			{
+				return BadRequest();
+			}
+
+			var treatment = await _context.Treatments
+				.Include(t => t.Doctor)
+				.Include(t => t.Patient)
+				.FirstOrDefaultAsync(t => t.TreatmentID == id);
+
+			if (treatment == null)
+			{
+				return NotFound();
+			}
+
+			var treatmentDto = new TreatmentDTO
+			{
+				TreatmentID = treatment.TreatmentID,
+				TreatmentDate = treatment.TreatmentDate,
+				TreatmentDetail = treatment.TreatmentDetails,
+				TreatmentTitle = treatment.Title,
+				FollowUpDate = treatment.FollowUpDate,
+				DoctorFullName = treatment.Doctor != null ? $"{treatment.Doctor.FirstName} {treatment.Doctor.LastName}" : "Unknown",
+				PatientFullName = treatment.Patient != null ? $"{treatment.Patient.FirstName} {treatment.Patient.LastName}" : "Unknown"
+			};
+
+			return View(treatmentDto);
+		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> DeleteConfirmed(Guid id)
+		{
+			if (id == Guid.Empty)
+			{
+				return BadRequest(); // Kiểm tra ID hợp lệ
+			}
+
+			var treatment = await _context.Treatments.FirstOrDefaultAsync(t => t.TreatmentID == id);
+
+			if (treatment == null)
+			{
+				return NotFound(); // Xử lý khi không tìm thấy Treatment
+			}
+
+			try
+			{
+				_context.Treatments.Remove(treatment);
+				await _context.SaveChangesAsync();
+				return RedirectToAction(nameof(Index)); // Chuyển hướng về danh sách
+			}
+			catch (DbUpdateException ex)
+			{
+				// Log lỗi nếu cần
+				ModelState.AddModelError(string.Empty, "Unable to delete the treatment. Please try again later.");
+				return View("Error", ex); // Hiển thị trang lỗi nếu cần
+			}
+		}
 	}
 }

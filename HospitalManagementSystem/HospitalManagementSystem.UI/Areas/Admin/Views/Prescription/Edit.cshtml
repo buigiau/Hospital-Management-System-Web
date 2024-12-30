@@ -1,0 +1,39 @@
+﻿@model Prescription
+
+@{
+    ViewData["Title"] = "Edit Prescription";
+}
+
+<h1>Edit Prescription</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="PresciptionID" />
+
+    <input type="hidden" asp-for="TreatmentID" />
+
+    <div class="form-group">
+        <label class="control-label">Treatment Title</label>
+        <input type="text" class="form-control" value="@Model.Treatment?.Title" readonly />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MedicationName" class="control-label"></label>
+        <input asp-for="MedicationName" class="form-control" />
+        <span asp-validation-for="MedicationName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dosage" class="control-label"></label>
+        <input asp-for="Dosage" class="form-control" />
+        <span asp-validation-for="Dosage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Instruction" class="control-label"></label>
+        <textarea asp-for="Instruction" class="form-control"></textarea>
+        <span asp-validation-for="Instruction" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

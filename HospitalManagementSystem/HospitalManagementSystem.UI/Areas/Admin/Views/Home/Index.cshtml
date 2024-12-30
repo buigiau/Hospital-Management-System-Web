@@ -1,1 +1,91 @@
-﻿<h1>Hello</h1>
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>Welcome Back Admin</h1>
+<h2>This app is only for Hospital's Members</h2>
+
+<div class="role-container">
+    <div class="role-box admin">
+        <img src="~/img/admin.png" alt="Admin" class="role-image" />
+        <h3>Admin</h3>
+        <p>Manage the hospital's system, users, and settings.</p>
+        <a href="#" class="btn">Go to Admin Panel</a>
+    </div>
+
+    <div class="role-box patient">
+        <img src="~/img/patient.png" alt="Patient" class="role-image" />
+        <h3>Patient</h3>
+        <p>Book appointments, view medical records, and more.</p>
+        <a asp-controller="User" asp-action="Login" asp-area="" class="btn">Patient Dashboard</a>
+    </div>
+
+    <div class="role-box doctor">
+        <img src="~/img/medical-team.png" alt="Doctor" class="role-image" />
+        <h3>Doctor</h3>
+        <p>Manage appointments, view patient records, and more.</p>
+        <a asp-controller="User" asp-action="Login" asp-area="" class="btn">Doctor Dashboard</a>
+    </div>
+</div>
+<style>
+    /* Container to hold the role boxes */
+    .role-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    /* Common styling for each role box */
+    .role-box {
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        padding: 20px;
+        width: 30%;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+        .role-box:hover {
+            transform: scale(1.05);
+        }
+
+    /* Styling the image for each role */
+    .role-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+
+    /* Titles */
+    .role-box h3 {
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    /* Description text */
+    .role-box p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    /* Button for navigating */
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+</style>
