@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace HospitalManagementSystem.UI.Areas.Admin
+namespace HospitalManagementSystem.UI.Areas.Admin.Controllers
 {
 	[Area("Admin")]
 	[Authorize]
 	public class AppointmentController : Controller
 	{
 		private readonly ApplicationDbContext _context;
-		public AppointmentController (ApplicationDbContext context)
+		public AppointmentController(ApplicationDbContext context)
 		{
 			_context = context;
 		}

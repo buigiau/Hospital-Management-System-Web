@@ -7,41 +7,40 @@
 <h1>Create Treatment</h1>
 
 <form asp-action="Create" method="post">
-    <input type="hidden" asp-for="TreatmentID" />
     @Html.AntiForgeryToken()
 
     <!-- Treatment Title -->
     <div class="form-group">
         <label asp-for="TreatmentTitle" class="control-label"></label>
-        <input asp-for="TreatmentTitle" class="form-control" />
+        <input name="TreatmentTitle" class="form-control" />
         <span asp-validation-for="TreatmentTitle" class="text-danger"></span>
     </div>
 
     <!-- Treatment Detail -->
     <div class="form-group">
         <label asp-for="TreatmentDetail" class="control-label"></label>
-        <textarea asp-for="TreatmentDetail" class="form-control"></textarea>
+        <textarea name="TreatmentDetail" class="form-control"></textarea>
         <span asp-validation-for="TreatmentDetail" class="text-danger"></span>
     </div>
 
     <!-- Treatment Date -->
     <div class="form-group">
         <label asp-for="TreatmentDate" class="control-label"></label>
-        <input asp-for="TreatmentDate" class="form-control" type="date" />
+        <input name="TreatmentDate" class="form-control" type="date" />
         <span asp-validation-for="TreatmentDate" class="text-danger"></span>
     </div>
 
     <!-- Follow-up Date -->
     <div class="form-group">
         <label asp-for="FollowUpDate" class="control-label"></label>
-        <input asp-for="FollowUpDate" class="form-control" type="date" />
+        <input name="FollowUpDate" class="form-control" type="date" />
         <span asp-validation-for="FollowUpDate" class="text-danger"></span>
     </div>
 
     <!-- Doctor Selection -->
     <div class="form-group">
         <label asp-for="DoctorID" class="control-label"></label>
-        <select asp-for="DoctorID" class="form-control">
+        <select name="DoctorID" class="form-control">
             <option value="">-- Select Doctor --</option>
             @foreach (var doctor in ViewData["Doctors"] as List<Doctor>)
             {
@@ -54,7 +53,7 @@
     <!-- Patient Selection -->
     <div class="form-group">
         <label asp-for="PatientID" class="control-label"></label>
-        <select asp-for="PatientID" class="form-control">
+        <select name="PatientID" class="form-control">
             <option value="">-- Select Patient --</option>
             @foreach (var patient in ViewData["Patients"] as List<Patient>)
             {
